@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+	/** 사용자 모바일 반응형 **/
+	@media all and (max-width: 480px){
+		.wrap {min-width:200px}
+		.header {min-width:auto;}
+		.logo.left {width:100%;}
+		.logo img {    width: 50% !important;  height: 70px;}
+		.logo a{ margin-top: 25px;}
+		.nav_toggle {display:none;}
+		.gnb {display:none;}
+		.right_nav {display:none;}
+
+		nav {top:0;}
+		nav.nav_big { width: 100%; height:auto; position:relative;    margin-top: 70px;}
+		.side_bar {display:none;}
+
+		.contain {margin:0; min-width:auto;}
+		.contain.left {  margin-left: 0;}
+		.content {padding:50px 10px 0;}
+		.table_basic thead tr th:first-child {display:none;}
+		.table_basic tbody tr td:first-child {}
+		.table_basic thead tr th {text-align:center;}
+		.table_basic tbody tr td {text-align:center; word-break:break-all;}
+		.submit {    margin: 30px 0;    text-align: center;}
+		.btn.blue {}
+		a.btn {padding: 4px 6px 3px;    line-height: 26px;}
+
+		.page_title {margin: 0px 0px 20px;}
+
+	}
+
+	/** 사용자 테블릿 반응형 **/
+	@media all and (min-width: 481px)and (max-width: 1024px){
+	}

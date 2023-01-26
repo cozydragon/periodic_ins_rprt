@@ -1,0 +1,536 @@
+@charset "utf-8";
+
+*{margin:0;padding:0;-webkit-box-sizing:border-box;box-sizing:border-box;-moz-box-sizing:border-box;resize:none;outline:0;}
+body{font-family:'Open Sans','맑은 고딕',Arial,verdana,sans-serif;font-style:normal;font-weight:normal;color:#333;line-height:1;}
+ul,ol,dl,menu,li{padding:0;margin:0;list-style:none;}
+h1,h2,h3,h4,h5,h6{margin:0;}
+a{color:inherit;text-decoration:none; /*-webkit-transition:all 0.2s ease; -ms-transition:all 0.2s ease; transition:all 0.2s ease;*/cursor:pointer}
+a:hover,a:active,a:focus{text-decoration:none;}
+table{border-spacing:0;width:100%;empty-cells:show;table-layout:fixed;border-collapse:collapse;}
+legend,caption{display:none;}
+img,fieldset,iframe{border:0}
+button,input,optgroup,select,textarea{padding:0;font-family:inherit;font-size:inherit;color:inherit;vertical-align:middle;outline:none;-o-box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+input,textarea,select{border:1px solid #cfcfcf;color:rgba(0,0,0,0.6);outline:none;padding:6px 12px;background:#fff;border-radius: 4px;-webkit-transition:border-color ease-in-out .15s;-o-transition:border-color ease-in-out .15s;transition:border-color ease-in-out .15s}
+textarea{height: auto;overflow:auto;resize:none;}
+input[type="checkbox"],input[type="radio"]{vertical-align:middle;outline:none;-o-box-sizing:border-box;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+select[disabled],input[disabled],input[readonly],textarea[readonly]{background-color:#eee;opacity:1;}
+input[disabled],select[disabled]{cursor:not-allowed !important;}
+input.error{border-color:#ef5350;box-shadow:none;}
+textarea:focus,input:focus,select:focus{outline:none;background:#ffffff;border-color:#a2a2a2;}
+input.error:focus{border-color:#843534;}
+select{padding: 0 0 0 6px}
+/*select{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+select::-ms-expand{display:none;}*/
+button{display:inline-block;font-family:inherit;vertical-align:middle;cursor:pointer;white-space:nowrap;text-decoration:none;background:transparent;border:none;outline:0;*overflow:visible;}
+button[disabled],input[disabled]{cursor:default}
+button::-moz-focus-inner{border:0;padding:0;}
+.btn,.btn:hover,.btn:active,.btn:focus,.btn:active:focus{outline: 0px;box-shadow: none;}
+
+.clearfix:after{display:table;clear:both;content:'';overflow:hidden;visibility:hidden;height:0;width:0;}
+.hide{display:none!important;}
+.hidden{visibility:hidden;}
+.txt_hidden{text-indent: -9999px;font-size: 0;}
+.disabled{color:#bfbfbf}
+.pd0{padding:0!important}
+.mr0{margin:0!important}
+.clear{clear:both!important;}
+
+
+
+/* tournament */
+/*
+#tournament_container {overflow: hidden;    float: left; 	}
+.section { 	width: 100px; 	height: 520px; 	float: left;	}
+.section > div { width: 100px; 	height: 41px; 	border: 1px solid #1eb6f9; 	margin: 10px 0; 	background: #315C93; 		color: white; 	padding: 10px 10px 10px 20px;	line-height: 18px;		}
+.section > div:nth-child(2n) { 	margin-bottom: 40px;	}
+.connecter { width: 30px; height: 520px; float: left; }
+.line { width: 30px; height: 520px; float: left; }
+.connecter div { border: 1px solid #000; border-left: none; height: 50px; 	width: 100%; 	margin: 80px 0 0 1px;	}
+.connecter div:first-child { margin: 32px 0 0 1px; 	}
+.line div { border-top: 1px solid #000; margin: 133px 0 0 1px; 	}
+.line div:first-child { margin-top: 55px; 	}
+#quarterFinals > div { 	margin-top: 91px; 	}
+#quarterFinals > div:first-child { margin-top: 37px; }
+#conn2 div { margin-top: 133px; height: 133px;}
+#conn2 div:first-child { margin-top: 57px; }
+#line2 div { margin-top: 270px; }
+#line2 div:first-child { margin-top: 125px; }
+#semiFinals > div { margin-top: 230px; 	}
+#semiFinals > div:first-child { margin-top: 105px; 	}
+#conn3 div { margin-top: 125px; height: 270px;	}
+#line3 div { margin-top: 270px; }
+#final > div { 	margin-top: 250px; 	}
+#roundofsixteen > div { margin-top: 5px;	}
+#roundofsixteen > div:first-child { margin-top: 10px; }
+*/
+
+#tournament_container {overflow: hidden;    float: left; margin-left:20%;	}
+#tournament_container .section { 	width: 100px; 		float: left;	}
+#tournament_container .section > div { width: 100px; 	height: 41px; 		margin: 10px 0; 	background: #6e6f73; 		color: white; 	text-align: center;	line-height: 41px;border-radius: 5px;   box-shadow: 0 3px 3px -2px rgba(0,0,0,0.4);		}
+#tournament_container .section > div:nth-child(2n) { 	margin-bottom: 40px;	}
+#tournament_container .connecter { width: 30px; height: 520px; float: left; }
+#tournament_container .line { width: 30px; height: 520px; float: left; }
+#tournament_container .connecter div { border: 1px solid #000; border-left: none; height: 25px; 	width: 100%; 	margin: 0 0 0 1px;	}
+#tournament_container .connecter div:nth-of-type(3) {	margin: 83px 0 0 1px;	}
+#tournament_container .connecter div:nth-of-type(5) {	margin: 83px 0 0 1px;	}
+#tournament_container .connecter div:nth-of-type(7) {	margin: 83px 0 0 1px;	}
+#tournament_container .connecter div:nth-of-type(9) {	margin: 83px 0 0 1px;	}
+#tournament_container .connecter div:nth-of-type(11) {	margin: 83px 0 0 1px;	}
+#tournament_container .connecter div:nth-of-type(13) {	margin: 83px 0 0 1px;	}
+#tournament_container .connecter div:nth-of-type(15) {	margin: 83px 0 0 1px;	}
+#tournament_container .connecter div:nth-of-type(17) {	margin: 83px 0 0 1px;	}
+#tournament_container .connecter div:nth-of-type(19) {	margin: 83px 0 0 1px;	}
+#tournament_container .connecter div:nth-of-type(21) {	margin: 83px 0 0 1px;	}
+#tournament_container .connecter div:nth-of-type(23) {	margin: 83px 0 0 1px;	}
+#tournament_container .connecter div:nth-of-type(25) {	margin: 83px 0 0 1px;	}
+#tournament_container .connecter div:first-child { margin: 32px 0 0 1px; 	}
+#tournament_container .line div { border-top: 1px solid #000; margin: 133px 0 0 1px; 	}
+#tournament_container .line div:first-child { margin-top: 55px; 	}
+#tournament_container #quarterFinals > div { 	margin-top: 91px; 	}
+#tournament_container #quarterFinals > div:first-child { margin-top: 37px; }
+#tournament_container #conn2 div { margin-top: 0px; height: 68px;}
+#tournament_container #conn2 div:nth-of-type(3) { margin-top: 130px;}
+#tournament_container #conn2 div:first-child { margin-top: 57px; }
+#tournament_container #line2 div { margin-top: 270px; }
+#tournament_container #line2 div:first-child { margin-top: 125px; }
+#tournament_container #semiFinals > div { margin-top: 230px; 	}
+#tournament_container #semiFinals > div:first-child { margin-top: 105px; 	}
+#tournament_container #conn3 div { margin-top: 125px; height: 136px;	}
+#tournament_container #line3 div { margin-top: 263px; }
+#tournament_container #final > div { 	margin-top: 243px; 	}
+#tournament_container #roundofsixteen > div { margin-top: 5px;	}
+#tournament_container #roundofsixteen > div:first-child { margin-top: 10px; }
+
+
+
+#tournament_container02 {overflow: hidden;    float: right; margin-right:20%;	}
+#tournament_container02 .section { 	width: 100px;  	float: left;	}
+#tournament_container02 .section > div { width: 100px; 	height: 41px;  	margin: 10px 0; 	background: #6e6f73; 		color: white; 	text-align: center;	line-height: 41px;border-radius: 5px;   box-shadow: 0 3px 3px -2px rgba(0,0,0,0.4);}
+#tournament_container02 .section > div:nth-child(2n) { 	margin-bottom: 40px;	}
+#tournament_container02 .connecter { width: 30px; height: 520px; float: left; }
+#tournament_container02 .line { width: 30px; height: 520px; float: left; }
+#tournament_container02 .connecter div { border: 1px solid #000; border-right: none; height: 25px; 	width: 100%; 	margin: 0 0 0 1px;	}
+#tournament_container02 .connecter div:nth-of-type(3) {	margin: 83px 0 0 1px;	}
+#tournament_container02 .connecter div:nth-of-type(5) {	margin: 83px 0 0 1px;	}
+#tournament_container02 .connecter div:nth-of-type(7) {	margin: 83px 0 0 1px;	}
+#tournament_container02 .connecter div:nth-of-type(9) {	margin: 83px 0 0 1px;	}
+#tournament_container02 .connecter div:nth-of-type(11) {	margin: 83px 0 0 1px;	}
+#tournament_container02 .connecter div:nth-of-type(13) {	margin: 83px 0 0 1px;	}
+#tournament_container02 .connecter div:nth-of-type(15) {	margin: 83px 0 0 1px;	}
+#tournament_container02 .connecter div:nth-of-type(17) {	margin: 83px 0 0 1px;	}
+#tournament_container02 .connecter div:nth-of-type(19) {	margin: 83px 0 0 1px;	}
+#tournament_container02 .connecter div:nth-of-type(21) {	margin: 83px 0 0 1px;	}
+#tournament_container02 .connecter div:nth-of-type(23) {	margin: 83px 0 0 1px;	}
+#tournament_container02 .connecter div:nth-of-type(25) {	margin: 83px 0 0 1px;	}
+#tournament_container02 .connecter div:first-child { margin: 32px 0 0 1px; 	}
+#tournament_container02 .line div { border-top: 1px solid #000; margin: 133px 0 0 1px; 	}
+#tournament_container02 .line div:first-child { margin-top: 55px; 	}
+#tournament_container02 #quarterFinals > div { 	margin-top: 91px; 	}
+#tournament_container02 #quarterFinals > div:first-child { margin-top: 37px; }
+#tournament_container02 #conn2 div { margin-top: 0px; height: 68px;}
+#tournament_container02 #conn2 div:nth-of-type(3) { margin-top: 130px;}
+#tournament_container02 #conn2 div:first-child { margin-top: 57px; }
+#tournament_container02 #line2 div { margin-top: 270px; }
+#tournament_container02 #line2 div:first-child { margin-top: 125px; }
+#tournament_container02 #semiFinals > div { margin-top: 230px; 	}
+#tournament_container02 #semiFinals > div:first-child { margin-top: 105px; 	}
+#tournament_container02 #conn3 div { margin-top: 125px; height: 136px;	}
+#tournament_container02 #line3 div { margin-top: 263px; }
+#tournament_container02 #final > div { 	margin-top: 243px; 	}
+#tournament_container02 #roundofsixteen > div { margin-top: 5px;	}
+#tournament_container02 #roundofsixteen > div:first-child { margin-top: 10px; }
+
+
+#tournament_container03 {overflow: hidden;    float: left; margin-left:20%;	}
+#tournament_container03 .section { 	width: 100px; 		float: left;	}
+#tournament_container03 .section > div { width: 100px; 	height: 30px;  	margin: 10px 0; 	background: #6e6f73; 		color: white; 	text-align: center;	line-height: 30px;border-radius: 5px;   box-shadow: 0 3px 3px -2px rgba(0,0,0,0.4);}
+#tournament_container03 .section > div:nth-child(2n) { 	/* margin-bottom: 40px; */	}
+#tournament_container03 .connecter { width: 30px; height: 520px; float: left; }
+#tournament_container03 .line { width: 30px; height: 520px; float: left; }
+#tournament_container03 .connecter div { border: 1px solid #000; border-left: none; height: 25px; 	width: 100%; 	margin: 0 0 0 1px;	}
+#tournament_container03 .connecter div:nth-of-type(3) {	margin: 30px 0 0 1px;	}
+#tournament_container03 .connecter div:nth-of-type(5) {	margin: 30px 0 0 1px;	}
+#tournament_container03 .connecter div:nth-of-type(7) {	margin: 30px 0 0 1px;	}
+#tournament_container03 .connecter div:nth-of-type(9) {	margin: 30px 0 0 1px;	}
+#tournament_container03 .connecter div:nth-of-type(11) {	margin: 30px 0 0 1px;	}
+#tournament_container03 .connecter div:nth-of-type(13) {	margin: 30px 0 0 1px;	}
+#tournament_container03 .connecter div:nth-of-type(15) {	margin: 30px 0 0 1px;	}
+#tournament_container03 .connecter div:nth-of-type(17) {	margin: 30px 0 0 1px;	}
+#tournament_container03 .connecter div:nth-of-type(19) {	margin: 30px 0 0 1px;	}
+#tournament_container03 .connecter div:nth-of-type(21) {	margin: 30px 0 0 1px;	}
+#tournament_container03 .connecter div:nth-of-type(23) {	margin: 30px 0 0 1px;	}
+#tournament_container03 .connecter div:nth-of-type(25) {	margin: 30px 0 0 1px;	}
+#tournament_container03 .connecter div:first-child { margin: 20px 0 0 1px; 	}
+#tournament_container03 .line div { border-top: 1px solid #000; margin: 80px 0 0 1px; 	}
+#tournament_container03 .line div:first-child { margin-top: 44px; 	}
+#tournament_container03 #quarterFinals > div { 	margin-top: 91px; 	}
+#tournament_container03 #quarterFinals > div:first-child { margin-top: 37px; }
+#tournament_container03 #conn2 div { margin-top: 0px; height: 68px;}
+#tournament_container03 #conn2 div:nth-of-type(3) { margin-top: 130px;}
+#tournament_container03 #conn2 div:first-child { margin-top: 57px; }
+#tournament_container03 #line2 div { margin-top: 270px; }
+#tournament_container03 #line2 div:first-child { margin-top: 125px; }
+#tournament_container03 #semiFinals > div { margin-top: 230px; 	}
+#tournament_container03 #semiFinals > div:first-child { margin-top: 105px; 	}
+#tournament_container03 #conn3 div { margin-top: 125px; height: 136px;	}
+#tournament_container03 #line3 div { margin-top: 263px; }
+#tournament_container03 #final > div { 	margin-top: 243px; 	}
+#tournament_container03 #roundofsixteen > div { margin-top: 5px;	}
+#tournament_container03 #roundofsixteen > div:first-child { margin-top: 10px; }
+
+
+
+#tournament_container04 {overflow: hidden;    float: right; margin-right:20%;	}
+#tournament_container04 .section { 	width: 100px;  	float: left;	}
+#tournament_container04 .section > div { width: 100px; 	height: 30px;  	margin: 10px 0; 	background: #6e6f73; 		color: white; 	text-align: center;	line-height: 30px;border-radius: 5px;   box-shadow: 0 3px 3px -2px rgba(0,0,0,0.4);}
+#tournament_container04 .section > div:nth-child(2n) { 	/*margin-bottom: 40px;*/	}
+#tournament_container04 .connecter { width: 30px; height: 520px; float: left; }
+#tournament_container04 .line { width: 30px; height: 520px; float: left; }
+#tournament_container04 .connecter div { border: 1px solid #000; border-right: none; height: 25px; 	width: 100%; 	margin: 0 0 0 1px;	}
+#tournament_container04 .connecter div:nth-of-type(3) {	margin: 30px 0 0 1px;	}
+#tournament_container04 .connecter div:nth-of-type(5) {	margin: 30px 0 0 1px;	}
+#tournament_container04 .connecter div:nth-of-type(7) {	margin: 30px 0 0 1px;	}
+#tournament_container04 .connecter div:nth-of-type(9) {	margin: 30px 0 0 1px;	}
+#tournament_container04 .connecter div:nth-of-type(11) {	margin: 30px 0 0 1px;	}
+#tournament_container04 .connecter div:nth-of-type(13) {	margin: 30px 0 0 1px;	}
+#tournament_container04 .connecter div:nth-of-type(15) {	margin: 30px 0 0 1px;	}
+#tournament_container04 .connecter div:nth-of-type(17) {	margin: 30px 0 0 1px;	}
+#tournament_container04 .connecter div:nth-of-type(19) {	margin: 30px 0 0 1px;	}
+#tournament_container04 .connecter div:nth-of-type(21) {	margin: 30px 0 0 1px;	}
+#tournament_container04 .connecter div:nth-of-type(23) {	margin: 30px 0 0 1px;	}
+#tournament_container04 .connecter div:nth-of-type(25) {	margin: 30px 0 0 1px;	}
+#tournament_container04 .connecter div:first-child { margin: 20px 0 0 1px; 	}
+#tournament_container04 .line div { border-top: 1px solid #000; margin: 80px 0 0 1px; 	}
+#tournament_container04 .line div:first-child { margin-top: 44px; 	}
+#tournament_container04 #quarterFinals > div { 	margin-top: 91px; 	}
+#tournament_container04 #quarterFinals > div:first-child { margin-top: 37px; }
+#tournament_container04 #conn2 div { margin-top: 0px; height: 68px;}
+#tournament_container04 #conn2 div:nth-of-type(3) { margin-top: 130px;}
+#tournament_container04 #conn2 div:first-child { margin-top: 57px; }
+#tournament_container04 #line2 div { margin-top: 270px; }
+#tournament_container04 #line2 div:first-child { margin-top: 125px; }
+#tournament_container04 #semiFinals > div { margin-top: 230px; 	}
+#tournament_container04 #semiFinals > div:first-child { margin-top: 105px; 	}
+#tournament_container04 #conn3 div { margin-top: 125px; height: 136px;	}
+#tournament_container04 #line3 div { margin-top: 263px; }
+#tournament_container04 #final > div { 	margin-top: 243px; 	}
+#tournament_container04 #roundofsixteen > div { margin-top: 5px;	}
+#tournament_container04 #roundofsixteen > div:first-child { margin-top: 10px; }
+
+
+#tournament_container05 {overflow: hidden;    float: left; margin-left:6%;	}
+#tournament_container05 .section { 	width: 100px; 		float: left;	}
+#tournament_container05 .section > div { width: 100px; 	height: 30px; 	margin: 10px 0; 	background: #6e6f73; 		color: white; 	text-align: center;	line-height: 30px;border-radius: 5px;   box-shadow: 0 3px 3px -2px rgba(0,0,0,0.4);}
+#tournament_container05 .section > div:nth-child(2n) { 	/* margin-bottom: 40px; */	}
+#tournament_container05 .connecter { width: 30px; height: 520px; float: left; }
+#tournament_container05 .line { width: 30px; height: 520px; float: left; }
+#tournament_container05 .connecter div { border: 1px solid #000; border-left: none; height: 25px; 	width: 100%; 	margin: 0 0 0 1px;	}
+#tournament_container05 .connecter div:nth-of-type(3) {	margin: 30px 0 0 1px;	}
+#tournament_container05 .connecter div:nth-of-type(5) {	margin: 30px 0 0 1px;	}
+#tournament_container05 .connecter div:nth-of-type(7) {	margin: 30px 0 0 1px;	}
+#tournament_container05 .connecter div:nth-of-type(9) {	margin: 30px 0 0 1px;	}
+#tournament_container05 .connecter div:nth-of-type(11) {	margin: 30px 0 0 1px;	}
+#tournament_container05 .connecter div:nth-of-type(13) {	margin: 30px 0 0 1px;	}
+#tournament_container05 .connecter div:nth-of-type(15) {	margin: 30px 0 0 1px;	}
+#tournament_container05 .connecter div:nth-of-type(17) {	margin: 30px 0 0 1px;	}
+#tournament_container05 .connecter div:nth-of-type(19) {	margin: 30px 0 0 1px;	}
+#tournament_container05 .connecter div:nth-of-type(21) {	margin: 30px 0 0 1px;	}
+#tournament_container05 .connecter div:nth-of-type(23) {	margin: 30px 0 0 1px;	}
+#tournament_container05 .connecter div:nth-of-type(25) {	margin: 30px 0 0 1px;	}
+#tournament_container05 .connecter div:first-child { margin: 20px 0 0 1px; 	}
+#tournament_container05 .line div { border-top: 1px solid #000; margin: 80px 0 0 1px; 	}
+#tournament_container05 .line div:first-child { margin-top: 44px; 	}
+#tournament_container05 #quarterFinals > div { 	margin-top: 91px; 	}
+#tournament_container05 #quarterFinals > div:first-child { margin-top: 37px; }
+#tournament_container05 #conn2 div { margin-top: 0px; height: 68px;}
+#tournament_container05 #conn2 div:nth-of-type(3) { margin-top: 130px;}
+#tournament_container05 #conn2 div:first-child { margin-top: 57px; }
+#tournament_container05 #line2 div { margin-top: 270px; }
+#tournament_container05 #line2 div:first-child { margin-top: 125px; }
+#tournament_container05 #semiFinals > div { margin-top: 230px; 	}
+#tournament_container05 #semiFinals > div:first-child { margin-top: 105px; 	}
+#tournament_container05 #conn3 div { margin-top: 125px; height: 136px;	}
+#tournament_container05 #line3 div { margin-top: 263px; }
+#tournament_container05 #final > div { 	margin-top: 243px; 	}
+#tournament_container05 #roundofsixteen > div { margin-top: 5px;	}
+#tournament_container05 #roundofsixteen > div:first-child { margin-top: 10px; }
+
+
+
+#tournament_container06 {overflow: hidden;    float: left; margin-left:-1%;	}
+#tournament_container06 .section { 	width: 100px;  	float: left;	}
+#tournament_container06 .section > div { width: 100px; 	height: 30px;  	margin: 10px 0; 	background: #6e6f73; 		color: white; 	text-align: center;	line-height: 30px;   border-radius: 5px;   box-shadow: 0 3px 3px -2px rgba(0,0,0,0.4);	}
+#tournament_container06 .section > div:nth-child(2n) { 	/*margin-bottom: 40px;*/	}
+#tournament_container06 .connecter { width: 30px; height: 520px; float: left; }
+#tournament_container06 .line { width: 30px; height: 520px; float: left; }
+#tournament_container06 .connecter div { border: 1px solid #000; border-right: none; height: 25px; 	width: 100%; 	margin: 0 0 0 1px;	}
+#tournament_container06 .connecter div:nth-of-type(3) {	margin: 30px 0 0 1px;	}
+#tournament_container06 .connecter div:nth-of-type(5) {	margin: 30px 0 0 1px;	}
+#tournament_container06 .connecter div:nth-of-type(7) {	margin: 30px 0 0 1px;	}
+#tournament_container06 .connecter div:nth-of-type(9) {	margin: 30px 0 0 1px;	}
+#tournament_container06 .connecter div:nth-of-type(11) {	margin: 30px 0 0 1px;	}
+#tournament_container06 .connecter div:nth-of-type(13) {	margin: 30px 0 0 1px;	}
+#tournament_container06 .connecter div:nth-of-type(15) {	margin: 30px 0 0 1px;	}
+#tournament_container06 .connecter div:nth-of-type(17) {	margin: 30px 0 0 1px;	}
+#tournament_container06 .connecter div:nth-of-type(19) {	margin: 30px 0 0 1px;	}
+#tournament_container06 .connecter div:nth-of-type(21) {	margin: 30px 0 0 1px;	}
+#tournament_container06 .connecter div:nth-of-type(23) {	margin: 30px 0 0 1px;	}
+#tournament_container06 .connecter div:nth-of-type(25) {	margin: 30px 0 0 1px;	}
+#tournament_container06 .connecter div:first-child { margin: 20px 0 0 1px; 	}
+#tournament_container06 .line div { border-top: 1px solid #000; margin: 80px 0 0 1px; 	}
+#tournament_container06 .line div:first-child { margin-top: 44px; 	}
+#tournament_container06 #quarterFinals > div { 	margin-top: 91px; 	}
+#tournament_container06 #quarterFinals > div:first-child { margin-top: 37px; }
+#tournament_container06 #conn2 div { margin-top: 0px; height: 68px;}
+#tournament_container06 #conn2 div:nth-of-type(3) { margin-top: 130px;}
+#tournament_container06 #conn2 div:first-child { margin-top: 57px; }
+#tournament_container06 #line2 div { margin-top: 270px; }
+#tournament_container06 #line2 div:first-child { margin-top: 125px; }
+#tournament_container06 #semiFinals > div { margin-top: 230px; 	}
+#tournament_container06 #semiFinals > div:first-child { margin-top: 105px; 	}
+#tournament_container06 #conn3 div { margin-top: 125px; height: 136px;	}
+#tournament_container06 #line3 div { margin-top: 263px; }
+#tournament_container06 #final > div { 	margin-top: 243px; 	}
+#tournament_container06 #roundofsixteen > div { margin-top: 5px;	}
+#tournament_container06 #roundofsixteen > div:first-child { margin-top: 10px; }
+
+
+#tournament_container07 {overflow: hidden;    float: left; margin-left:6%;	}
+#tournament_container07 .section { 	width: 100px; 		float: left;	}
+#tournament_container07 .section > div { width: 100px; 	height: 30px;  	margin: 10px 0; 	background: #6e6f73; 		color: white; 	text-align: center;	line-height: 30px;border-radius: 5px;   box-shadow: 0 3px 3px -2px rgba(0,0,0,0.4);}
+#tournament_container07 .section > div:nth-child(2n) { 	/* margin-bottom: 40px; */	}
+#tournament_container07 .connecter { width: 30px; height: 520px; float: left; }
+#tournament_container07 .line { width: 30px; height: 520px; float: left; }
+#tournament_container07 .connecter div { border: 1px solid #000; border-left: none; height: 25px; 	width: 100%; 	margin: 0 0 0 1px;	}
+#tournament_container07 .connecter div:nth-of-type(3) {	margin: 30px 0 0 1px;	}
+#tournament_container07 .connecter div:nth-of-type(5) {	margin: 30px 0 0 1px;	}
+#tournament_container07 .connecter div:nth-of-type(7) {	margin: 30px 0 0 1px;	}
+#tournament_container07 .connecter div:nth-of-type(9) {	margin: 30px 0 0 1px;	}
+#tournament_container07 .connecter div:nth-of-type(11) {	margin: 30px 0 0 1px;	}
+#tournament_container07 .connecter div:nth-of-type(13) {	margin: 30px 0 0 1px;	}
+#tournament_container07 .connecter div:nth-of-type(15) {	margin: 30px 0 0 1px;	}
+#tournament_container07 .connecter div:nth-of-type(17) {	margin: 30px 0 0 1px;	}
+#tournament_container07 .connecter div:nth-of-type(19) {	margin: 30px 0 0 1px;	}
+#tournament_container07 .connecter div:nth-of-type(21) {	margin: 30px 0 0 1px;	}
+#tournament_container07 .connecter div:nth-of-type(23) {	margin: 30px 0 0 1px;	}
+#tournament_container07 .connecter div:nth-of-type(25) {	margin: 30px 0 0 1px;	}
+#tournament_container07 .connecter div:first-child { margin: 20px 0 0 1px; 	}
+#tournament_container07 .line div { border-top: 1px solid #000; margin: 80px 0 0 1px; 	}
+#tournament_container07 .line div:first-child { margin-top: 44px; 	}
+#tournament_container07 #quarterFinals > div { 	margin-top: 91px; 	}
+#tournament_container07 #quarterFinals > div:first-child { margin-top: 37px; }
+#tournament_container07 #conn2 div { margin-top: 0px; height: 68px;}
+#tournament_container07 #conn2 div:nth-of-type(3) { margin-top: 130px;}
+#tournament_container07 #conn2 div:first-child { margin-top: 57px; }
+#tournament_container07 #line2 div { margin-top: 270px; }
+#tournament_container07 #line2 div:first-child { margin-top: 125px; }
+#tournament_container07 #semiFinals > div { margin-top: 230px; 	}
+#tournament_container07 #semiFinals > div:first-child { margin-top: 105px; 	}
+#tournament_container07 #conn3 div { margin-top: 125px; height: 136px;	}
+#tournament_container07 #line3 div { margin-top: 263px; }
+#tournament_container07 #final > div { 	margin-top: 243px; 	}
+#tournament_container07 #roundofsixteen > div { margin-top: 5px;	}
+#tournament_container07 #roundofsixteen > div:first-child { margin-top: 10px; }
+
+
+
+#tournament_container08 {overflow: hidden;    float: left; margin-left:-1%;	}
+#tournament_container08 .section { 	width: 100px;  	float: left;	}
+#tournament_container08 .section > div { width: 100px; 	height: 30px; 	margin: 10px 0; 	background:#6e6f73; 		color: white; 	text-align: center;	line-height: 30px;border-radius: 5px;   box-shadow: 0 3px 3px -2px rgba(0,0,0,0.4);}
+#tournament_container08 .section > div:nth-child(2n) { 	/*margin-bottom: 40px;*/	}
+#tournament_container08 .connecter { width: 30px; height: 520px; float: left; }
+#tournament_container08 .line { width: 30px; height: 520px; float: left; }
+#tournament_container08 .connecter div { border: 1px solid #000; border-right: none; height: 25px; 	width: 100%; 	margin: 0 0 0 1px;	}
+#tournament_container08 .connecter div:nth-of-type(3) {	margin: 30px 0 0 1px;	}
+#tournament_container08 .connecter div:nth-of-type(5) {	margin: 30px 0 0 1px;	}
+#tournament_container08 .connecter div:nth-of-type(7) {	margin: 30px 0 0 1px;	}
+#tournament_container08 .connecter div:nth-of-type(9) {	margin: 30px 0 0 1px;	}
+#tournament_container08 .connecter div:nth-of-type(11) {	margin: 30px 0 0 1px;	}
+#tournament_container08 .connecter div:nth-of-type(13) {	margin: 30px 0 0 1px;	}
+#tournament_container08 .connecter div:nth-of-type(15) {	margin: 30px 0 0 1px;	}
+#tournament_container08 .connecter div:nth-of-type(17) {	margin: 30px 0 0 1px;	}
+#tournament_container08 .connecter div:nth-of-type(19) {	margin: 30px 0 0 1px;	}
+#tournament_container08 .connecter div:nth-of-type(21) {	margin: 30px 0 0 1px;	}
+#tournament_container08 .connecter div:nth-of-type(23) {	margin: 30px 0 0 1px;	}
+#tournament_container08 .connecter div:nth-of-type(25) {	margin: 30px 0 0 1px;	}
+#tournament_container08 .connecter div:first-child { margin: 20px 0 0 1px; 	}
+#tournament_container08 .line div { border-top: 1px solid #000; margin: 80px 0 0 1px; 	}
+#tournament_container08 .line div:first-child { margin-top: 44px; 	}
+#tournament_container08 #quarterFinals > div { 	margin-top: 91px; 	}
+#tournament_container08 #quarterFinals > div:first-child { margin-top: 37px; }
+#tournament_container08 #conn2 div { margin-top: 0px; height: 68px;}
+#tournament_container08 #conn2 div:nth-of-type(3) { margin-top: 130px;}
+#tournament_container08 #conn2 div:first-child { margin-top: 57px; }
+#tournament_container08 #line2 div { margin-top: 270px; }
+#tournament_container08 #line2 div:first-child { margin-top: 125px; }
+#tournament_container08 #semiFinals > div { margin-top: 230px; 	}
+#tournament_container08 #semiFinals > div:first-child { margin-top: 105px; 	}
+#tournament_container08 #conn3 div { margin-top: 125px; height: 136px;	}
+#tournament_container08 #line3 div { margin-top: 263px; }
+#tournament_container08 #final > div { 	margin-top: 243px; 	}
+#tournament_container08 #roundofsixteen > div { margin-top: 5px;	}
+#tournament_container08 #roundofsixteen > div:first-child { margin-top: 10px; }
+
+
+
+#tournament_container09 {overflow: hidden;    float: left; margin-left:6%;	}
+#tournament_container09 .section { 	width: 100px; 		float: left;	}
+#tournament_container09 .section > div { width: 100px; 	height: 30px;  	margin: 10px 0; 	background: #6e6f73; 		color: white; 	text-align: center;	line-height: 30px;border-radius: 5px;   box-shadow: 0 3px 3px -2px rgba(0,0,0,0.4);}
+#tournament_container09 .section > div:nth-child(2n) { 	/* margin-bottom: 40px; */	}
+#tournament_container09 .connecter { width: 30px; height: 520px; float: left; }
+#tournament_container09 .line { width: 30px; height: 520px; float: left; }
+#tournament_container09 .connecter div { border: 1px solid #000; border-left: none; height: 25px; 	width: 100%; 	margin: 0 0 0 1px;	}
+#tournament_container09 .connecter div:nth-of-type(3) {	margin: 30px 0 0 1px;	}
+#tournament_container09 .connecter div:nth-of-type(5) {	margin: 30px 0 0 1px;	}
+#tournament_container09 .connecter div:nth-of-type(7) {	margin: 30px 0 0 1px;	}
+#tournament_container09 .connecter div:nth-of-type(9) {	margin: 30px 0 0 1px;	}
+#tournament_container09 .connecter div:nth-of-type(11) {	margin: 30px 0 0 1px;	}
+#tournament_container09 .connecter div:nth-of-type(13) {	margin: 30px 0 0 1px;	}
+#tournament_container09 .connecter div:nth-of-type(15) {	margin: 30px 0 0 1px;	}
+#tournament_container09 .connecter div:nth-of-type(17) {	margin: 30px 0 0 1px;	}
+#tournament_container09 .connecter div:nth-of-type(19) {	margin: 30px 0 0 1px;	}
+#tournament_container09 .connecter div:nth-of-type(21) {	margin: 30px 0 0 1px;	}
+#tournament_container09 .connecter div:nth-of-type(23) {	margin: 30px 0 0 1px;	}
+#tournament_container09 .connecter div:nth-of-type(25) {	margin: 30px 0 0 1px;	}
+#tournament_container09 .connecter div:first-child { margin: 20px 0 0 1px; 	}
+#tournament_container09 .line div { border-top: 1px solid #000; margin: 80px 0 0 1px; 	}
+#tournament_container09 .line div:first-child { margin-top: 44px; 	}
+#tournament_container09 #quarterFinals > div { 	margin-top: 91px; 	}
+#tournament_container09 #quarterFinals > div:first-child { margin-top: 37px; }
+#tournament_container09 #conn2 div { margin-top: 0px; height: 68px;}
+#tournament_container09 #conn2 div:nth-of-type(3) { margin-top: 130px;}
+#tournament_container09 #conn2 div:first-child { margin-top: 57px; }
+#tournament_container09 #line2 div { margin-top: 270px; }
+#tournament_container09 #line2 div:first-child { margin-top: 125px; }
+#tournament_container09 #semiFinals > div { margin-top: 230px; 	}
+#tournament_container09 #semiFinals > div:first-child { margin-top: 105px; 	}
+#tournament_container09 #conn3 div { margin-top: 125px; height: 136px;	}
+#tournament_container09 #line3 div { margin-top: 263px; }
+#tournament_container09 #final > div { 	margin-top: 243px; 	}
+#tournament_container09 #roundofsixteen > div { margin-top: 5px;	}
+#tournament_container09 #roundofsixteen > div:first-child { margin-top: 10px; }
+
+
+
+#tournament_container10 {overflow: hidden;    float: left; margin-left:-1%;	}
+#tournament_container10 .section { 	width: 100px;  	float: left;	}
+#tournament_container10 .section > div { width: 100px; 	height: 30px;  	margin: 10px 0; 	background: #6e6f73; 		color: white; 	text-align: center;	line-height: 30px;border-radius: 5px;   box-shadow: 0 3px 3px -2px rgba(0,0,0,0.4);}
+#tournament_container10 .section > div:nth-child(2n) { 	/*margin-bottom: 40px;*/	}
+#tournament_container10 .connecter { width: 30px; height: 520px; float: left; }
+#tournament_container10 .line { width: 30px; height: 520px; float: left; }
+#tournament_container10 .connecter div { border: 1px solid #000; border-right: none; height: 25px; 	width: 100%; 	margin: 0 0 0 1px;	}
+#tournament_container10 .connecter div:nth-of-type(3) {	margin: 30px 0 0 1px;	}
+#tournament_container10 .connecter div:nth-of-type(5) {	margin: 30px 0 0 1px;	}
+#tournament_container10 .connecter div:nth-of-type(7) {	margin: 30px 0 0 1px;	}
+#tournament_container10 .connecter div:nth-of-type(9) {	margin: 30px 0 0 1px;	}
+#tournament_container10 .connecter div:nth-of-type(11) {	margin: 30px 0 0 1px;	}
+#tournament_container10 .connecter div:nth-of-type(13) {	margin: 30px 0 0 1px;	}
+#tournament_container10 .connecter div:nth-of-type(15) {	margin: 30px 0 0 1px;	}
+#tournament_container10 .connecter div:nth-of-type(17) {	margin: 30px 0 0 1px;	}
+#tournament_container10 .connecter div:nth-of-type(19) {	margin: 30px 0 0 1px;	}
+#tournament_container10 .connecter div:nth-of-type(21) {	margin: 30px 0 0 1px;	}
+#tournament_container10 .connecter div:nth-of-type(23) {	margin: 30px 0 0 1px;	}
+#tournament_container10 .connecter div:nth-of-type(25) {	margin: 30px 0 0 1px;	}
+#tournament_container10 .connecter div:first-child { margin: 20px 0 0 1px; 	}
+#tournament_container10 .line div { border-top: 1px solid #000; margin: 80px 0 0 1px; 	}
+#tournament_container10 .line div:first-child { margin-top: 44px; 	}
+#tournament_container10 #quarterFinals > div { 	margin-top: 91px; 	}
+#tournament_container10 #quarterFinals > div:first-child { margin-top: 37px; }
+#tournament_container10 #conn2 div { margin-top: 0px; height: 68px;}
+#tournament_container10 #conn2 div:nth-of-type(3) { margin-top: 130px;}
+#tournament_container10 #conn2 div:first-child { margin-top: 57px; }
+#tournament_container10 #line2 div { margin-top: 270px; }
+#tournament_container10 #line2 div:first-child { margin-top: 125px; }
+#tournament_container10 #semiFinals > div { margin-top: 230px; 	}
+#tournament_container10 #semiFinals > div:first-child { margin-top: 105px; 	}
+#tournament_container10 #conn3 div { margin-top: 125px; height: 136px;	}
+#tournament_container10 #line3 div { margin-top: 263px; }
+#tournament_container10 #final > div { 	margin-top: 243px; 	}
+#tournament_container10 #roundofsixteen > div { margin-top: 5px;	}
+#tournament_container10 #roundofsixteen > div:first-child { margin-top: 10px; }
+
+
+#tournament_container11 {overflow: hidden;    float: left; margin-left:6%;	}
+#tournament_container11 .section { 	width: 100px; 		float: left;	}
+#tournament_container11 .section > div { width: 100px; 	height: 30px; 	margin: 10px 0; 	background: #6e6f73; 		color: white; 	text-align: center;	line-height: 30px;border-radius: 5px;   box-shadow: 0 3px 3px -2px rgba(0,0,0,0.4);}
+#tournament_container11 .section > div:nth-child(2n) { 	/* margin-bottom: 40px; */	}
+#tournament_container11 .connecter { width: 30px; height: 520px; float: left; }
+#tournament_container11 .line { width: 30px; height: 520px; float: left; }
+#tournament_container11 .connecter div { border: 1px solid #000; border-left: none; height: 25px; 	width: 100%; 	margin: 0 0 0 1px;	}
+#tournament_container11 .connecter div:nth-of-type(3) {	margin: 30px 0 0 1px;	}
+#tournament_container11 .connecter div:nth-of-type(5) {	margin: 30px 0 0 1px;	}
+#tournament_container11 .connecter div:nth-of-type(7) {	margin: 30px 0 0 1px;	}
+#tournament_container11 .connecter div:nth-of-type(9) {	margin: 30px 0 0 1px;	}
+#tournament_container11 .connecter div:nth-of-type(11) {	margin: 30px 0 0 1px;	}
+#tournament_container11 .connecter div:nth-of-type(13) {	margin: 30px 0 0 1px;	}
+#tournament_container11 .connecter div:nth-of-type(15) {	margin: 30px 0 0 1px;	}
+#tournament_container11 .connecter div:nth-of-type(17) {	margin: 30px 0 0 1px;	}
+#tournament_container11 .connecter div:nth-of-type(19) {	margin: 30px 0 0 1px;	}
+#tournament_container11 .connecter div:nth-of-type(21) {	margin: 30px 0 0 1px;	}
+#tournament_container11 .connecter div:nth-of-type(23) {	margin: 30px 0 0 1px;	}
+#tournament_container11 .connecter div:nth-of-type(25) {	margin: 30px 0 0 1px;	}
+#tournament_container11 .connecter div:first-child { margin: 20px 0 0 1px; 	}
+#tournament_container11 .line div { border-top: 1px solid #000; margin: 80px 0 0 1px; 	}
+#tournament_container11 .line div:first-child { margin-top: 44px; 	}
+#tournament_container11 #quarterFinals > div { 	margin-top: 91px; 	}
+#tournament_container11 #quarterFinals > div:first-child { margin-top: 37px; }
+#tournament_container11 #conn2 div { margin-top: 0px; height: 68px;}
+#tournament_container11 #conn2 div:nth-of-type(3) { margin-top: 130px;}
+#tournament_container11 #conn2 div:first-child { margin-top: 57px; }
+#tournament_container11 #line2 div { margin-top: 270px; }
+#tournament_container11 #line2 div:first-child { margin-top: 125px; }
+#tournament_container11 #semiFinals > div { margin-top: 230px; 	}
+#tournament_container11 #semiFinals > div:first-child { margin-top: 105px; 	}
+#tournament_container11 #conn3 div { margin-top: 125px; height: 136px;	}
+#tournament_container11 #line3 div { margin-top: 263px; }
+#tournament_container11 #final > div { 	margin-top: 243px; 	}
+#tournament_container11 #roundofsixteen > div { margin-top: 5px;	}
+#tournament_container11 #roundofsixteen > div:first-child { margin-top: 10px; }
+
+
+
+#tournament_container12 {overflow: hidden;    float: left; margin-left:-1%;	}
+#tournament_container12 .section { 	width: 100px;  	float: left;	}
+#tournament_container12 .section > div { width: 100px; 	height: 30px; 	margin: 10px 0; 	background: #6e6f73; 		color: white; 	text-align: center;	line-height: 30px;border-radius: 5px;   box-shadow: 0 3px 3px -2px rgba(0,0,0,0.4);}
+#tournament_container12 .section > div:nth-child(2n) { 	/*margin-bottom: 40px;*/	}
+#tournament_container12 .connecter { width: 30px; height: 520px; float: left; }
+#tournament_container12 .line { width: 30px; height: 520px; float: left; }
+#tournament_container12 .connecter div { border: 1px solid #000; border-right: none; height: 25px; 	width: 100%; 	margin: 0 0 0 1px;	}
+#tournament_container12 .connecter div:nth-of-type(3) {	margin: 30px 0 0 1px;	}
+#tournament_container12 .connecter div:nth-of-type(5) {	margin: 30px 0 0 1px;	}
+#tournament_container12 .connecter div:nth-of-type(7) {	margin: 30px 0 0 1px;	}
+#tournament_container12 .connecter div:nth-of-type(9) {	margin: 30px 0 0 1px;	}
+#tournament_container12 .connecter div:nth-of-type(11) {	margin: 30px 0 0 1px;	}
+#tournament_container12 .connecter div:nth-of-type(13) {	margin: 30px 0 0 1px;	}
+#tournament_container12 .connecter div:nth-of-type(15) {	margin: 30px 0 0 1px;	}
+#tournament_container12 .connecter div:nth-of-type(17) {	margin: 30px 0 0 1px;	}
+#tournament_container12 .connecter div:nth-of-type(19) {	margin: 30px 0 0 1px;	}
+#tournament_container12 .connecter div:nth-of-type(21) {	margin: 30px 0 0 1px;	}
+#tournament_container12 .connecter div:nth-of-type(23) {	margin: 30px 0 0 1px;	}
+#tournament_container12 .connecter div:nth-of-type(25) {	margin: 30px 0 0 1px;	}
+#tournament_container12 .connecter div:first-child { margin: 20px 0 0 1px; 	}
+#tournament_container12 .line div { border-top: 1px solid #000; margin: 80px 0 0 1px; 	}
+#tournament_container12 .line div:first-child { margin-top: 44px; 	}
+#tournament_container12 #quarterFinals > div { 	margin-top: 91px; 	}
+#tournament_container12 #quarterFinals > div:first-child { margin-top: 37px; }
+#tournament_container12 #conn2 div { margin-top: 0px; height: 68px;}
+#tournament_container12 #conn2 div:nth-of-type(3) { margin-top: 130px;}
+#tournament_container12 #conn2 div:first-child { margin-top: 57px; }
+#tournament_container12 #line2 div { margin-top: 270px; }
+#tournament_container12 #line2 div:first-child { margin-top: 125px; }
+#tournament_container12 #semiFinals > div { margin-top: 230px; 	}
+#tournament_container12 #semiFinals > div:first-child { margin-top: 105px; 	}
+#tournament_container12 #conn3 div { margin-top: 125px; height: 136px;	}
+#tournament_container12 #line3 div { margin-top: 263px; }
+#tournament_container12 #final > div { 	margin-top: 243px; 	}
+#tournament_container12 #roundofsixteen > div { margin-top: 5px;	}
+#tournament_container12 #roundofsixteen > div:first-child { margin-top: 10px; }
+
+
+
+.win_line {border-color:red !important;}
+.win_player {border-color:red !important;background: #e10e0e !important;}
+.team_name { color: #ffffff;  word-break: break-all;  display: block;    padding: 0 1px;  float: right;  background: #27262652;  width: 50px;  text-overflow: ellipsis;  border-radius: 0 5px 5px 0;  white-space: nowrap;  overflow: hidden;}
+.plyer_name {font-size: 12px;}
+.group {margin:0 10px 0 0;}
+.team {margin:0 0 0 10px;}
