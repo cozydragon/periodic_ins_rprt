@@ -6,7 +6,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
  
-<title>지방교부세 관리프로그램</title>
+<title>아이티아이즈 CMS</title>
 <!-- Bootstrap Core CSS -->
 <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
