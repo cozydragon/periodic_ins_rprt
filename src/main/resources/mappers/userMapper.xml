@@ -27,7 +27,7 @@
 			  ,b.authrt_nm
 			  ,c.site_nm
 		  FROM tb_user a
-		  INNER JOIN tb_authrt b on a.role_id = b.role_id
+		  INNER JOIN tb_authrt b on a.authrt_id = b.authrt_id
 		  LEFT OUTER JOIN tb_site c on a.site_id = c.site_id
 		  WHERE 1=1
 		  <include refid="search"/>

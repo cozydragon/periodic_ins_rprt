@@ -25,8 +25,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		
 		HttpSession session = request.getSession();
 		
-		//로그인 되어 있을때
-		
 		if(session.getAttribute("LOGIN") != null){
 			session.removeAttribute("LOGIN");
 			session.removeAttribute("loginyn");
@@ -34,11 +32,11 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 			
 		}
 		
-		if(request.getParameter("useCookie") != null){ // remember me 구현 하면 사용 하는 거임. 아니면 안씀
+		if(request.getParameter("useCookie") != null){ 
 			logger.info("remember me................");
 			Cookie loginCookie = new Cookie("userId", request.getParameter("user_id").toString());
 			loginCookie.setPath("/");
-			loginCookie.setMaxAge(60*15*1*1);// 순서대로 60초 60분 24시간 7일
+			loginCookie.setMaxAge(60*15*1*1);
 			response.addCookie(loginCookie);
 		}
 
@@ -58,7 +56,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		Object role = modelMap.get("role");
 		Object site_id = modelMap.get("site_id");
 		
-		//로그인 되어 있을 경우
 		if(userVO != null){
 			
 			logger.info("login success");
@@ -77,7 +74,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 				loginCookie.setPath("/");
 				loginCookie.setMaxAge(60*60*24*7);
 				response.addCookie(loginCookie);
-				
+					
 			}else {
 				Cookie loginCookie = new Cookie("userId","");
 				loginCookie.setPath("/");

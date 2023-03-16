@@ -34,37 +34,18 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 		}
 		return true;
 		*/
-		
-		
-		
-	    // 1. handler ���� Ȯ��
-
-	    // ���ɻ�� Controller�� �ִ� �޼����̹Ƿ� HandlerMethod Ÿ������ üũ
-
 	    if( handler instanceof HandlerMethod == false ) {
-
-	      // return true�̸�  Controller�� �ִ� �޼��尡 �ƴϹǷ�, �״�� ��Ʈ�ѷ��� ����
 
 	      return true;
 
 	    }
 
 	 
-
-	    // 2.�� ��ȯ
-
 	    HandlerMethod handlerMethod = (HandlerMethod)handler;
-
-	     
-
-
-	    // 3. @Auth�� �ִ� ����̹Ƿ�, ������ �ִ��� üũ
 
 	    HttpSession session = request.getSession();
 
 	    if( session == null ) {
-
-	      // �α��� ȭ������ �̵�
 
 	      response.sendRedirect(request.getContextPath() + "/user/login");
 
@@ -73,8 +54,6 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 	    }
 
 	     
-
-	    // 4. ������ �����ϸ� ��ȿ�� �������� Ȯ��
 
 	    UserVO authUser = (UserVO)session.getAttribute("LOGIN");
 
@@ -90,13 +69,9 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 
 	    
 
-	    // 5. @Auth �޾ƿ���
-
 	    Auth auth = handlerMethod.getMethodAnnotation(Auth.class);
 
 	     
-
-	    // 6. method�� @Auth�� ���� ���, �� ������ �ʿ� ���� ��û
 
 	    if( auth == null ) {
 
@@ -106,15 +81,9 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 
 	     
 	    
-	    // 7. admin�� ���
-
 	    String role = auth.role().toString();
 
 	    if( "ADMIN".equals(role) ) {
-
-	      // admin���� �� �� �ִ� ������ �ۼ��Ѵ�.
-
-	      // ex) ������ id�� sangwha�̸� admin�̴�.
 
 	      if( "ADMIN".equals(roleSession) == false ){   // admin�� �ƴϹǷ� return false
 
@@ -125,8 +94,6 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 	      }
 
 	    }
-
-	    // 8. �����㰡, �� �޼��带 �����ϵ��� ��
 
 	    return true;
 
