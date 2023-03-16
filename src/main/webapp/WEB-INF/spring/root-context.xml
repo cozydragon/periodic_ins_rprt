@@ -16,9 +16,9 @@
 	<!-- MySQL dataSource -->
 	<bean id="dataSourceSpied" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-		<property name="url" value="jdbc:mysql://localhost:3306/local_grant_tax?useSSL=false&amp;serverTimezone=UTC"></property>
-		<property name="username" value="iteyes"></property>
-		<property name="password" value="iteyes010!"></property>
+		<property name="url" value="jdbc:mysql://192.168.0.10:3306/mysql?useSSL=false&amp;serverTimezone=UTC"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="qwer1234@"></property>
 	</bean>
 	
 	<bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
