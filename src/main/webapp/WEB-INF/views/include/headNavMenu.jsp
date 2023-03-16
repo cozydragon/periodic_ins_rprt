@@ -21,7 +21,7 @@ alert ("로그인 시간이 만료되어 로그인화면으로 이동합니다."
 	<div class="header">
 	
 		<div class="logo">
-			<a href="#"><h1>정기점검보고서<br>시스템</h1></a>
+			<a href="#"><h1>아이티아이즈<br>CMS</h1></a>
 		</div>
 		<span class="nav_toggle">
 			<input type="checkbox" id="checkbox-1" name="" class="navcheck" value="1" >

@@ -42,7 +42,7 @@
 					
 					<div class="con_harf">
 						<div class="harf">
-							<h4 class="title_txt03">정기점검보고서 시스템</h4>
+							<h4 class="title_txt03">아이티아이즈<br>CMS</h4>
 							<div class="table_wrap">
 								<table class="table_clear">
 								<!-- 

@@ -60,7 +60,7 @@
 										<option>시·군·구 교부세 담당 [ROLE003]</option>
 										<option>중앙부처 시도/시군구 통계담당 [ROLE004]</option>
 										<option>시도/시군구 사업담당 [ROLE005]</option>
-										<option>정기점검보고서 정보시스템 운영자 [ROLE006]</option>
+										<option>CMS [ROLE006]</option>
 									</select>
 								</td>
 								

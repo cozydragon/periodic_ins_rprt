@@ -25,7 +25,7 @@ if (loginyn == null){
 <head>
 	<meta charset="UTF-8">
     <meta content='IE=edge' http-equiv='X-UA-Compatible'>
-    <title>정기점검보고서 시스템</title>
+    <title>아이티아이즈 CMS</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     
 	<%@ include file="../include/header.jsp" %>
@@ -36,7 +36,7 @@ if (loginyn == null){
 
   <div class="login_wrapper">
        <div class="text_center">
-           <a href="../index.html" class="logo_login"><span> 정기점검보고서 <br /> 시스템 </span>  </a>
+           <a href="../index.html" class="logo_login"><span> 아이티아이즈 <br /> CMS </span>  </a>
        </div>
 
        <form class="form-horizontal m-t-20" action="/user/loginCheck" method="post">
