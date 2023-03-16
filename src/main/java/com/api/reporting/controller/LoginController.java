@@ -74,7 +74,6 @@ public class LoginController {
 
 		logger.debug("=======loginCheck");
 		
-		//model¿¡ user Á¤º¸ ³Ö±â
 		UserVO vo = service.login(dto);
 		if(vo == null){
 			return ;
@@ -82,9 +81,8 @@ public class LoginController {
 		
 		model.addAttribute("userVO",vo);
 		
-		String role_id = vo.getRole_id();
+		String role_id = vo.getAuthrt_id();
 		
-		//model¿¡ ±ÇÇÑ ³Ö±â
 		if ("sangwha".equals(vo.getUser_id())){
 			
 			model.addAttribute("role","ADMIN");
@@ -104,12 +102,12 @@ public class LoginController {
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
     public String logout(HttpSession session, Model model)
     {
-        //·Î±×¾Æ¿ô ¼¼¼Ç¿¡ ÀÖ´Â °ªÀ» Áö¿ì´Â °Í°ú °°´Ù.
-        //deleteÇÏ¸é redirect
-        logger.info("·Î±×¾Æ¿ô  ½ÃÀÛ");
+        //ï¿½Î±×¾Æ¿ï¿½ ï¿½ï¿½ï¿½Ç¿ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½.
+        //deleteï¿½Ï¸ï¿½ redirect
+        logger.info("ï¿½Î±×¾Æ¿ï¿½  ï¿½ï¿½ï¿½ï¿½");
         session.removeAttribute("LOGIN");
 		session.removeAttribute("loginyn");
-        logger.info("·Î±×¾Æ¿ô  Á¾·á");
+        logger.info("ï¿½Î±×¾Æ¿ï¿½  ï¿½ï¿½ï¿½ï¿½");
         return "redirect:/user/login";
     }
 
@@ -126,7 +124,7 @@ public class LoginController {
 			
 			model.addAttribute("UserVO",adminService.read_user(userVO.getUser_id()));
 
-			model.addAttribute("code_role",utilService.show_code("tb_role","role_id","role_name"));
+			model.addAttribute("code_role",utilService.show_code("tb_authrt","authrt_id","role_name"));
 			model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_name","site_name","asc"));
 			
 		} catch (Exception e){
@@ -143,8 +141,8 @@ public class LoginController {
 		try {
 			model.addAttribute("UserVO",adminService.read_user(user_id));
 
-			model.addAttribute("code_role",utilService.show_code("tb_role","role_id","role_name"));
-			model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_name","site_name","asc"));
+			model.addAttribute("code_role",utilService.show_code("tb_authrt","authrt_id","authrt_nm"));
+			model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_nm","site_nm","asc"));
 
 		} catch (Exception e) { 
 
@@ -173,7 +171,7 @@ public class LoginController {
 
 				if (cnt == 1) {
 
-					if (dto.getPassword_confirm().equals(dto.getPassword())) {
+					if (dto.getPswd_confirm().equals(dto.getPswd())) {
 
 						active = true;
 					}else {

@@ -15,12 +15,9 @@ public interface ReplyService {
 	
 	public void deleteReplyService(int rno) throws Exception;
 	
-	// 其捞隆 贸府 傈
 	public List<ReplyVO> noPageListService(int bno) throws Exception;
 	
-	// 醚 瘩臂 墨款飘
 	public int replyAllCountService(int bno) throws Exception;
 	
-	// 其捞隆 贸府
 	public List<ReplyVO> replyPageListService(int bno, Criteria cri) throws Exception;
 }

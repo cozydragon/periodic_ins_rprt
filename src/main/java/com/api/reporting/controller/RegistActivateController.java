@@ -58,7 +58,7 @@ public class RegistActivateController {
 
 	private static final Logger logger = LoggerFactory.getLogger(MainBoardController.class);
 
-	//device_»ç¿ë±â·Ï  insert
+	//device_ï¿½ï¿½ï¿½ï¿½ï¿½  insert
 	@RequestMapping(value="/regist-activate",method = {RequestMethod.POST})
 	@ResponseBody
 	public ResponseEntity<JSONObject> register_activating_count(WebRequest request,
@@ -102,7 +102,7 @@ public class RegistActivateController {
 
 	}
 
-	//device_»ç¿ë±â·Ï
+	//device_ï¿½ï¿½ï¿½ï¿½ï¿½
 	@RequestMapping(value="/regist-activate-by-api",method = {RequestMethod.POST})
 	@ResponseBody
 	public ResponseEntity<JSONObject> register_activating_by_api(WebRequest request,
@@ -152,7 +152,7 @@ public class RegistActivateController {
 
 	}
 
-	//device_»ç¿ë±â·Ï  100°Ç ½ÌÅ©
+	//device_ï¿½ï¿½ï¿½ï¿½ï¿½  100ï¿½ï¿½ ï¿½ï¿½Å©
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value="/regist-activate-sync",method = {RequestMethod.POST})
 	@ResponseBody
@@ -299,7 +299,7 @@ public class RegistActivateController {
 		LocalDate currentDate = LocalDate.now();
 		int year =  currentDate.getYear();
 
-		// °ªÀÌ ¾øÀ»¶§ ÇöÀç ³â°ú ¿ù,±âº»°ªÀº module_variety:1 ÇÃ¶óÀ×Á¬, °¹¼ö´Â 2°³·Î ¼ÂÆÃ
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½,ï¿½âº»ï¿½ï¿½ï¿½ï¿½ module_variety:1 ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		String searchYear = utility.convertNull(request.getParameter("searchYear"),String.valueOf(year));
 
 
@@ -403,7 +403,7 @@ public class RegistActivateController {
 		LocalDate currentDate = LocalDate.now();
 		int year =  currentDate.getYear();
 
-		// °ªÀÌ ¾øÀ»¶§ ÇöÀç ³â°ú ¿ù,±âº»°ªÀº module_variety:1 ÇÃ¶óÀ×Á¬, °¹¼ö´Â 2°³·Î ¼ÂÆÃ
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½,ï¿½âº»ï¿½ï¿½ï¿½ï¿½ module_variety:1 ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		String searchYear = utility.convertNull(request.getParameter("searchYear"),String.valueOf(year));
 
 
@@ -580,7 +580,7 @@ public class RegistActivateController {
 
 		LinkedHashMap<String, Object> param = new LinkedHashMap<String, Object>();
 
-		// °ªÀÌ ¾øÀ»¶§ ÇöÀç ³â°ú ¿ù,±âº»°ªÀº module_variety:1 ÇÃ¶óÀ×Á¬, °¹¼ö´Â 2°³·Î ¼ÂÆÃ
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½,ï¿½âº»ï¿½ï¿½ï¿½ï¿½ module_variety:1 ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		String searchYear = utility.convertNull(request.getParameter("searchYear"),String.valueOf(year));
 		String searchMonth = utility.convertNull(request.getParameter("searchMonth"),String.valueOf(month));
 		String module_variety = utility.convertNull(request.getParameter("module_variety"),"1");
@@ -593,7 +593,7 @@ public class RegistActivateController {
 
 		try{
 			model.addAttribute("code_module_variety",utilService.show_code_order("tb_module_variety","module_variety","variety_name","module_variety","asc"));
-			//Æ¯Á¤ ¸ðµâÀÇ °¹¼ö¸¦ Á¶È¸ÇÏ±â À§ÇÔ
+			//Æ¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½
 			model.addAttribute("code_variety_cnt",service.variety_cnt(param));
 
 			model.addAttribute("list",service.monthlysum_report(param));
@@ -654,10 +654,10 @@ public class RegistActivateController {
 
 		try{
 			model.addAttribute("list",service.moduleserialsum_report(param));
-			model.addAttribute("thisyear",String.valueOf(thisyear)+"³â");
-			model.addAttribute("lastyear",String.valueOf(lastyear)+"³â");
-			model.addAttribute("twoyearsago",String.valueOf(twoyearsago)+"³â");
-			model.addAttribute("threeyearsover",String.valueOf(twoyearsago)+"³âÀÌÀü");
+			model.addAttribute("thisyear",String.valueOf(thisyear)+"ï¿½ï¿½");
+			model.addAttribute("lastyear",String.valueOf(lastyear)+"ï¿½ï¿½");
+			model.addAttribute("twoyearsago",String.valueOf(twoyearsago)+"ï¿½ï¿½");
+			model.addAttribute("threeyearsover",String.valueOf(twoyearsago)+"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 			model.addAttribute("code_regist",utilService.show_code_length("tb_regist_status","code","code_message",100));
 
 

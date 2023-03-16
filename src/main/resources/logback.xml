@@ -10,4 +10,5 @@
 	<logger name="jdbc.resultsettable" level="ERROR" />
 	<logger name="jdbc.connection" 	level="INFO" />
 
+<typeAliases></typeAliases>
 </configuration>

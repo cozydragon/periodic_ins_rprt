@@ -55,7 +55,7 @@ public class AdminController {
 	@Auth(role=Role.ADMIN)
 	@RequestMapping(value = "/admin-home", method = RequestMethod.GET)
 	public String admin_home(Locale locale,Model model) {
-		logger.info("====admin-home È­¸é====");
+		logger.info("====admin-home È­ï¿½ï¿½====");
 		
 		logger.info("admin-home");
 		
@@ -80,7 +80,7 @@ public class AdminController {
 	@Auth(role=Role.ADMIN)
 	@RequestMapping(value = "/show-site")
 	public String show_branch(Model model,@ModelAttribute("cri") SearchCriteria cri) {
-		logger.info("====site µî·Ï È­¸é-Á¶È¸====");
+		logger.info("====site ï¿½ï¿½ï¿½ È­ï¿½ï¿½-ï¿½ï¿½È¸====");
 		
 		logger.info("show-site");
 		
@@ -225,8 +225,8 @@ public class AdminController {
 	public String getWriteUser(Model model){
 		
 		try {
-			model.addAttribute("code_role",utilService.show_code("tb_role","role_id","role_name"));
-            model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_name","site_name","asc"));
+			model.addAttribute("code_role",utilService.show_code("tb_authrt","authrt_id","ahrt_nm"));
+            model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_nm","site_nm","asc"));
 			
 		} catch (Exception e){
 			logger.info(e.getMessage());
@@ -262,8 +262,8 @@ public class AdminController {
 
         model.addAttribute("UserVO",service.read_user(user_id));
 
-        model.addAttribute("code_role",utilService.show_code("tb_role","role_id","role_name"));
-        model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_name","site_name","asc"));
+        model.addAttribute("code_role",utilService.show_code("tb_authrt","authrt_id","authrt_nm"));
+        model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_nm","site_nm","asc"));
 
         return "/admin/read-user";
 	}
@@ -274,8 +274,8 @@ public class AdminController {
 
         model.addAttribute("UserVO",service.read_user(user_id));
 
-        model.addAttribute("code_role",utilService.show_code("tb_role","role_id","role_name"));
-        model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_name","site_name","asc"));
+        model.addAttribute("code_role",utilService.show_code("tb_authrt","authrt_id","authrt_nm"));
+        model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_nm","site_nm","asc"));
 
         return "/admin/modify-user";
 	}
@@ -306,7 +306,7 @@ public class AdminController {
 
             } else {
 
-                if (dto.getPassword_confirm().equals(dto.getPassword())) {
+                if (dto.getPswd_confirm().equals(dto.getPswd())) {
 
                     active = true;
                 }else {
@@ -401,9 +401,9 @@ public class AdminController {
 	public String writeModule(Model model){
 		
 		try {
-			model.addAttribute("code_role",utilService.show_code("tb_role","role_id","role_name"));
-            model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_name","site_name","asc"));
-			model.addAttribute("code_module_variety",utilService.show_code("tb_module_variety","module_variety","variety_name"));
+			model.addAttribute("code_role",utilService.show_code("tb_authrt","authrt_id","authrt_nm"));
+            model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_nm","site_nm","asc"));
+			model.addAttribute("code_module_variety",utilService.show_code("tb_module_variety","module_variety","variety_nm"));
 			
 		} catch (Exception e){
 			logger.info(e.getMessage());
@@ -443,9 +443,9 @@ public class AdminController {
 
         model.addAttribute("ModuleDTO",service.read_module(module_serial));
 
-        model.addAttribute("code_role",utilService.show_code("tb_role","role_id","role_name"));
-        model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_name","site_name","asc"));
-        model.addAttribute("code_module_variety",utilService.show_code("tb_module_variety","module_variety","variety_name"));
+        model.addAttribute("code_role",utilService.show_code("tb_authrt","authrt_id","authrt_nm"));
+        model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_nm","site_nm","asc"));
+        model.addAttribute("code_module_variety",utilService.show_code("tb_module_variety","module_variety","variety_nm"));
 
 
         return "/admin/read-module";
@@ -458,7 +458,7 @@ public class AdminController {
 		try {
 			model.addAttribute("ModuleDTO",service.read_module(module_serial));
 
-			model.addAttribute("code_role",utilService.show_code("tb_role","role_id","role_name"));
+			model.addAttribute("code_role",utilService.show_code("tb_authrt","authrt_id","authrt_nm"));
             model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_name","site_name","asc"));
 			model.addAttribute("code_module_variety",utilService.show_code("tb_module_variety","module_variety","variety_name"));
 

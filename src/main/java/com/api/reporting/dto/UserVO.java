@@ -4,38 +4,36 @@ public class UserVO {
 
 	private String user_id;
 	
-	private String user_name;
+	private String user_nm;
 	
-	private String password;
+	private String pswd;
 	
-	private String email;
+	private String user_eml_addr;
 	
-	private String create_time;
+	private String reg_dt;
 	
-	private String update_time;
+	private String mdfcn_dt;
 	
-	private String role_id;
+	private String authrt_id;
 	
 	private String site_id;
 
-	//°¡»ó ¸íÄª
-	private String role_name;
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Äª
+	private String authrt_nm;
 	
-	//°¡»ó¸íÄª
-	private String site_name;
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Äª
+	private String site_nm;
 	
-	//°¡»ó¸íÄª
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Äª
 	private Boolean pw_change;
 	
-	//°¡»ó¸íÄª
-	private String password_before;
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Äª
+	private String pswd_before;
 	
-	//°¡»ó¸íÄª
-	private String password_confirm;
-	
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Äª
+	private String pswd_confirm;
 
 	public String getUser_id() {
-		
 		return user_id;
 	}
 
@@ -43,53 +41,53 @@ public class UserVO {
 		this.user_id = user_id;
 	}
 
-
-	public String getUser_name() {
-		return user_name;
+	public String getUser_nm() {
+		return user_nm;
 	}
 
-	public void setUser_name(String user_name) {
-		this.user_name = user_name;
+	public void setUser_nm(String user_nm) {
+		this.user_nm = user_nm;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPswd() {
+		return pswd;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPswd(String pswd) {
+		this.pswd = pswd;
 	}
 
-	public String getEmail() {
-		return email;
+
+	public String getUser_eml_addr() {
+		return user_eml_addr;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setUser_eml_addr(String user_eml_addr) {
+		this.user_eml_addr = user_eml_addr;
 	}
 
-	public String getCreate_time() {
-		return create_time;
+	public String getReg_dt() {
+		return reg_dt;
 	}
 
-	public void setCreate_time(String create_time) {
-		this.create_time = create_time;
+	public void setReg_dt(String reg_dt) {
+		this.reg_dt = reg_dt;
 	}
 
-	public String getUpdate_time() {
-		return update_time;
+	public String getMdfcn_dt() {
+		return mdfcn_dt;
 	}
 
-	public void setUpdate_time(String update_time) {
-		this.update_time = update_time;
+	public void setMdfcn_dt(String mdfcn_dt) {
+		this.mdfcn_dt = mdfcn_dt;
 	}
 
-	public String getRole_id() {
-		return role_id;
+	public String getAuthrt_id() {
+		return authrt_id;
 	}
 
-	public void setRole_id(String role_id) {
-		this.role_id = role_id;
+	public void setAuthrt_id(String authrt_id) {
+		this.authrt_id = authrt_id;
 	}
 
 	public String getSite_id() {
@@ -100,20 +98,20 @@ public class UserVO {
 		this.site_id = site_id;
 	}
 
-	public String getRole_name() {
-		return role_name;
+	public String getAuthrt_nm() {
+		return authrt_nm;
 	}
 
-	public void setRole_name(String role_name) {
-		this.role_name = role_name;
+	public void setAuthrt_nm(String authrt_nm) {
+		this.authrt_nm = authrt_nm;
 	}
 
-	public String getSite_name() {
-		return site_name;
+	public String getSite_nm() {
+		return site_nm;
 	}
 
-	public void setSite_name(String site_name) {
-		this.site_name = site_name;
+	public void setSite_nm(String site_nm) {
+		this.site_nm = site_nm;
 	}
 
 	public Boolean getPw_change() {
@@ -124,23 +122,25 @@ public class UserVO {
 		this.pw_change = pw_change;
 	}
 
-	public String getPassword_before() {
-		return password_before;
+	public String getPswd_before() {
+		return pswd_before;
 	}
 
-	public void setPassword_before(String password_before) {
-		this.password_before = password_before;
+	public void setPswd_before(String pswd_before) {
+		this.pswd_before = pswd_before;
 	}
 
-	public String getPassword_confirm() {
-		return password_confirm;
+	public String getPswd_confirm() {
+		return pswd_confirm;
 	}
 
-	public void setPassword_confirm(String password_confirm) {
-		this.password_confirm = password_confirm;
+	public void setPswd_confirm(String pswd_confirm) {
+		this.pswd_confirm = pswd_confirm;
 	}
 
 	
 	
-
+	
 }
+
+

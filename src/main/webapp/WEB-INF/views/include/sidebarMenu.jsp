@@ -6,7 +6,14 @@
 	  <!-- 패널 타이틀1 -->
 		<div class="scroll_style">
 			<ul class="nav_1d">
-				<li><a href="/home"><i class="fa fa-home"></i><span class="title">홈</span></a></li>				
+				<li><a href="/home"><i class="fa fa-home"></i><span class="title">홈</span></a></li>
+				<li><a href="#"><i class="fa fa-clipboard"></i><span class="title">정기점검내역</span><span class="arrow"></span></a>
+					<ul class="nav_2d">
+ 						<li><a href="/menu/menu101">서버 상태점검</a></li>
+ 						<li><a href="/menu/menu102">Storage 점검</a></li>
+					</ul>
+				</li>
+				<!-- 				
 				<li><a href="#"><i class="fa fa-clipboard"></i><span class="title">보통교부세</span><span class="arrow"></span></a>
 					<ul class="nav_2d">
  						<li><a href="/menu/menu101">수요조사 기초자료 관리</a></li>
@@ -25,7 +32,7 @@
 						<li><a href="/menu/menu203">교부세 산정 적정성 확인</a></li>
 						<li><a href="/menu/menu204"><font color="red">교부결정 사업 목록관리 및 통보</font></a></li>
  						<li><a href="/menu/menu205">특별교부세 실시간 집행내역</a></li>
-						<!-- <li><a href="/menu/menu206">관리카드 사업별 관리</a></li> -->
+						<li><a href="/menu/menu206">관리카드 사업별 관리</a></li>
 						<li><a href="/menu/menu207">사업진행사항 관리</a></li>
 						<li><a href="/menu/menu208"><font color="red">집행계획 등록 관리</font></a></li>
 						<li><a href="/menu/menu209"><font color="red">용도변경 관리</font></a></li>
@@ -77,7 +84,7 @@
 						<li><a href="/menu/menu614">조정교부금 산정 기능</a></li>
 						<li><a href="/menu/menu615">조정교부금 이의신청 관리 기능</a></li>
 						<li><a href="/menu/menu616">조정교부금별 재원관리</a></li>
-						<!-- <li><a href="/menu/menu617">조정교부금별 재원관리</a></li> -->
+						<li><a href="/menu/menu617">조정교부금별 재원관리</a></li>
 						<li><a href="/menu/menu618">조정교부금 배정처리</a></li>
 					</ul>					
 				</li>
@@ -131,5 +138,13 @@
 						<li><a href="/menu/menu1008">신청,심의,집행관리 구분별 항목 관리</a></li>
 					</ul>
 				</li>
-			</ul>
+				-->
+				<li><a href="#"><i class="fa fa-user-plus"></i><span class="title">환경설정</span><span class="arrow"></span></a>
+					<ul class="nav_2d">
+						<li><a href="/menu/menu1001"><font color="red">사용자 관리</font></a></li>
+						<li><a href="/menu/menu1002"><font color="red">메뉴 관리</font></a></li>
+						<li><a href="/menu/menu1003"><font color="red">권한별 메뉴 관리</font></a></li>
+						
+					</ul>
+				</li>
 		</div>

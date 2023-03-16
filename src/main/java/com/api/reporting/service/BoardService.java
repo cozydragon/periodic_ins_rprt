@@ -17,18 +17,13 @@ public interface BoardService {
 	
 	public void deleteBoardService(Integer bno) throws Exception;
 	
-	//데이터베이스 목록 모두 보여주기
 	public List<BoardVO> basicListBoardService() throws Exception;
 	
-	//페이지 지정 목록 보여주기
 	public List<BoardVO> criteriaListBoardService(Criteria cri) throws Exception;
 	
-	//페이징 처리 위한 총 게시글
 	public int countCriteriaService(Criteria cri) throws Exception;
 	
-	//검색 & 패이징 목록
 	public List<BoardVO> searchCriteriaBoardService(SearchCriteria cri) throws Exception;
 	
-	//검색 & 페이징 총 게시글
 	public int searchCountCriteriaService(SearchCriteria cri) throws Exception;
 }

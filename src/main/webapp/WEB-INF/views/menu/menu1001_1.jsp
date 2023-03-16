@@ -148,7 +148,7 @@
 					<div class="tb_bt"><a href="#" class="btn green">등록</a></div>
 				</div>
 				<div class="footer">
-				©  2019 All rights reserved.
+				©  2023 All rights reserved.
 				</div>
 			</div>
 			

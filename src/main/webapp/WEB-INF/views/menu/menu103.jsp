@@ -127,7 +127,7 @@
 					</div>
 				</div>
 				<div class="footer">
-				©  2019 All rights reserved.
+				©  2023 All rights reserved.
 				</div>
 			</div>
 			

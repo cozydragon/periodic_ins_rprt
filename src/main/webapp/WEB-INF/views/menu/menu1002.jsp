@@ -107,6 +107,16 @@
 								</thead>
 								<tbody>
 									<tr>
+										<td>MENU001</td>
+										<td>정기점검내역</td>
+										<td>정기점검처리</td>
+										<td>/menu/menu1000</td>
+										<td>Y</td>
+										<td>1</td>
+									</tr>
+								
+								<!-- 
+									<tr>
 										<td>OT0000</td>
 										<td>보통교부세</td>
 										<td>보통교부세 관리</td>
@@ -131,6 +141,7 @@
 										<td>2</td>
 									</tr>
 									<tr>
+
 										<td>OT0003</td>
 										<td>기초단체입력자료 검토</td>
 										<td>기초단체 입력자료에 대한 검토</td>
@@ -250,6 +261,7 @@
 										<td>Y</td>
 										<td>2</td>
 									</tr>
+								 -->									
 								</tbody>
 							</table>
 						</div>
@@ -257,7 +269,7 @@
 				</div>
 
 				<div class="footer">
-				©  2019 All rights reserved.
+				©  2023 All rights reserved.
 				</div>
 			</div>
 			

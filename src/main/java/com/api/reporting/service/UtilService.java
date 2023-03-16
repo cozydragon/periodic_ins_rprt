@@ -5,7 +5,6 @@ import java.util.List;
 
 public interface UtilService {
 
-	//공통코드
 	public List<HashMap<String,String>> show_code(String table_name,String code,String code_name) throws Exception;
 	public List<HashMap<String,String>> show_code_length(String table_name,String code,String code_name,int name_length) throws Exception;
 	public List<HashMap<String,String>> show_code_where(String table_name,String code,String code_name,String code_where1,String code_where2) throws Exception;

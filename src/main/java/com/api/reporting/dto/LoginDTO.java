@@ -3,8 +3,7 @@ package com.api.reporting.dto;
 public class LoginDTO {
 
 	private String user_id;
-	private String password;
-	private boolean useCookie;
+	private String pswd;
 
 	public String getUser_id() {
 		return user_id;
@@ -12,21 +11,15 @@ public class LoginDTO {
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
-	public String getPassword() {
-		return password;
+	public String getPswd() {
+		return pswd;
 	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public boolean isUseCookie() {
-		return useCookie;
-	}
-	public void setUseCookie(boolean useCookie) {
-		this.useCookie = useCookie;
+	public void setPswd(String pswd) {
+		this.pswd = pswd;
 	}
 	
 	@Override
 	public String toString() {
-		return "UserDTO [user_id=" + user_id + ", password=" + password + ", useCookie=" + useCookie + "]";
+		return "UserDTO [user_id=" + user_id + ", pswd=" + pswd + "]";
 	}
 }

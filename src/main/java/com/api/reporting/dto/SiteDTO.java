@@ -4,7 +4,7 @@ public class SiteDTO {
 	
 	private String site_id;
 	
-	private String site_name;
+	private String site_nm;
 	
 	private String start_time;
 	
@@ -34,12 +34,12 @@ public class SiteDTO {
 		this.site_id = site_id;
 	}
 
-	public String getSite_name() {
-		return site_name;
+	public String getSite_nm8() {
+		return site_nm;
 	}
 
-	public void setSite_name(String site_name) {
-		this.site_name = site_name;
+	public void setSite_nm(String site_name) {
+		this.site_nm = site_nm;
 	}
 
 	public String getStart_time() {

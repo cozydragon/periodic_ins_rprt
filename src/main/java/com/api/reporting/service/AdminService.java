@@ -19,108 +19,80 @@ public interface AdminService {
 
 	public List<SiteDTO> show_site(SearchCriteria cri) throws Exception;
 	
-	//ÆäÀÌÂ¡ Ã³¸® À§ÇÑ ÃÑ °Ô½Ã±Û
+	//ï¿½ï¿½ï¿½ï¿½Â¡ Ã³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô½Ã±ï¿½
 	public int site_count(Criteria cri) throws Exception;
 	
 	public int write_site(SiteDTO dto) throws Exception;
 	
-	//ÇÑ°³ »çÀÌÆ® Á¶È¸
+	//ï¿½Ñ°ï¿½ ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½È¸
 	public SiteDTO read_site(String site_id) throws Exception;
 	
 	public void update_site(SiteDTO dto) throws Exception;
 	
-	//»çÀÌÆ® »èÁ¦
+	//ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½
 	public void delete_site(String site_id) throws Exception;
 
 
-	//user Á¶È¸
+	//user ï¿½ï¿½È¸
 	public List<UserVO> show_user() throws Exception;
 	
-	//user Á¶È¸
+	//user ï¿½ï¿½È¸
 	public List<UserVO> show_user(SearchCriteria cri) throws Exception;
 	
-	//user ÆäÀÌÂ¡ Ã³¸® À§ÇÑ ÃÑ °Ô½Ã±Û
+	
 	public int user_count(Criteria cri) throws Exception;
 	
 	public int write_user(UserVO dto) throws Exception;
 	
-	//ÇÑ°³ user Á¶È¸
 	public UserVO read_user(String user_id) throws Exception;
 	
-	//ÆÐ½º¿öµå È®ÀÎ
 	public int password_check(UserVO dto) throws Exception;
 	
 	public void update_user(UserVO dto) throws Exception;
 	
-	//»çÀÌÆ® »èÁ¦
 	public void delete_user(String site_id) throws Exception;
 
-	//module Á¶È¸
 	public List<ModuleDTO> show_module() throws Exception;
 	
-	//module Á¶È¸
 	public List<ModuleDTO> show_module(HashMap<String,Object> param) throws Exception;
 	
-	//module ÆäÀÌÂ¡ Ã³¸® À§ÇÑ ÃÑ °Ô½Ã±Û
 	public int module_count(HashMap<String,Object> param) throws Exception;
 	
-	//module µî·Ï
 	public int write_module(ModuleDTO dto) throws Exception;
 	
-	//ÇÑ°³ module Á¶È¸
 	public ModuleDTO read_module(String module_serial) throws Exception;
 	
-	//module ¼öÁ¤
 	public void update_module(ModuleDTO dto) throws Exception;
 	
-	//module »èÁ¦¿©ºÎ È®ÀÎ
 	public int count_module_use(String module_serial) throws Exception;
 	
-	//module »èÁ¦
 	public void delete_module(String module_serial) throws Exception;
 	
-	//module Á¾·ù Á¶È¸
 	public List<ModuleVarietyDTO> show_module_kinds(HashMap<String,Object> param) throws Exception;
 
-	//module Á¾·ù ÆäÀÌÂ¡ Ã³¸® À§ÇÑ ÃÑ °Ô½Ã±Û
 	public int module_variety_count(HashMap<String,Object> param) throws Exception;
 
-	//moduleÁ¾·ù Á¶È¸
 	public ModuleVarietyDTO read_module_kinds(LinkedHashMap<String,Object> param) throws Exception;
 
-	
-	//moduleÁ¾·ù ¼öÁ¤
 	public void update_module_kinds(ModuleVarietyDTO dto) throws Exception;
 
-	
-	//module»èÁ¦ °¡´É È®ÀÎ
 	public int count_module_kinds(String module_variety) throws Exception;
 	
-	//moduleÁ¾·ù »èÁ¦
 	public void delete_module_kinds(String module_serial) throws Exception;
 	
-	//moduleÁ¾·ù µî·Ï
 	public void write_module_kinds(ModuleVarietyDTO dto) throws Exception;
 
-	//¸ðµâ ¸Þ½ÃÁö Á¶È¸
 	public List<RegistStatusDTO> show_regist_status(HashMap<String,Object> param) throws Exception;
 	
-	//¸ðµâ ¸Þ½ÃÁö ÆäÀÌÂ¡ Ã³¸® À§ÇÑ ÃÑ °Ô½Ã±Û
 	public int regist_status_count(HashMap<String,Object> param) throws Exception;
 	
-	//¸ðµâ ¸Þ½ÃÁö ¼öÁ¤Á¶È¸
 	public RegistStatusDTO read_regist_status(HashMap<String,Object> param) throws Exception;
 
-	//¸ðµâ ¸Þ½ÃÁö ¼öÁ¤
 	public void update_regist_status(RegistStatusDTO dto) throws Exception;
 	
-	//¸ðµâ ¸Þ½ÃÁö µî·Ï
 	public void write_regist_status(RegistStatusDTO dto) throws Exception;	
 	
-	
-	//¸ðµâ »èÁ¦°¡´É È®ÀÎ
 	public int count_regist_kinds(String code) throws Exception;
 	
-	//¸ðµâ ¸Þ½ÃÁö »èÁ¦
 	public void delete_regist_status(String code) throws Exception;	
 }

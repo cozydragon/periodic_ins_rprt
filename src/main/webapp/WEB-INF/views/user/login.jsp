@@ -50,7 +50,7 @@ if (loginyn == null){
 
            <div class="form-group">
                <div class="col-xs-12">
-                   <input class="form-control" type="password" name="password" required="" placeholder="Password를 입력해주세요">
+                   <input class="form-control" type="password" name="pswd" required="" placeholder="Password를 입력해주세요">
                     <i class="fa fa-key fa-2x form-control-feedback l-h-34"></i>
                </div>
            </div>

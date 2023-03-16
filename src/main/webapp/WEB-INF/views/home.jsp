@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta content='IE=edge' http-equiv='X-UA-Compatible'>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>지방세 교부 관리 시스템</title>
+	<title>CMS관리</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<%@ include file="./include/header.jsp" %>
 </head>
@@ -18,7 +18,7 @@
     <div class="side_bar">
         <div class="scroll_wrap">
             <ul>
-                <li>공지사항</li>
+                <li></li>
                 <li></li>
                 <li></li>
                 <li></li>
@@ -42,9 +42,10 @@
 					
 					<div class="con_harf">
 						<div class="harf">
-							<h4 class="title_txt03">공지사항</h4>
+							<h4 class="title_txt03">정기점검보고서 시스템</h4>
 							<div class="table_wrap">
 								<table class="table_clear">
+								<!-- 
 									<colgroup>
 										<col style="width:*;">
 										<col style="width:25%;">
@@ -59,7 +60,7 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td><a href="">00그룸 제34회 추석연휴 직원 복지 혜택</a></td>
+											<td><a href="">정기점검보고서</a></td>
 											<td>2018.9.15.(토)</td>
 											<td>관리자</td>
 										</tr>
@@ -74,6 +75,7 @@
 											<td>관리자</td>
 										</tr>
 									</tbody>
+									 -->
 								</table>
 							</div>
 						</div>
@@ -89,7 +91,7 @@
 					-->
 				</div>
 				<div class="footer">
-				©  2019 All rights reserved.
+				©  2023 All rights reserved.
 				</div>
 			</div>
 			

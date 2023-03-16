@@ -17,17 +17,17 @@
 	
 	<select id="show_user" resultType="UserVO">
 		SELECT a.user_id
-			  ,a.user_name
-			  ,a.password
-			  ,a.email
-			  ,a.create_time
-			  ,a.update_time
-			  ,a.role_id
+			  ,a.user_nm
+			  ,a.pswd
+			  ,a.user_eml_addr
+			  ,a.reg_dt
+			  ,a.mdfcn_dt
+			  ,a.authrt_id
 			  ,a.site_id
-			  ,b.role_name
-			  ,c.site_name
+			  ,b.authrt_nm
+			  ,c.site_nm
 		  FROM tb_user a
-		  INNER JOIN tb_role b on a.role_id = b.role_id
+		  INNER JOIN tb_authrt b on a.role_id = b.role_id
 		  LEFT OUTER JOIN tb_site c on a.site_id = c.site_id
 		  WHERE 1=1
 		  <include refid="search"/>
@@ -37,8 +37,8 @@
 
 	
 	<select id="login" resultType="UserVO">
-		select user_id,user_name,password,email,create_time,update_time,role_id,site_id 
-		from tb_user where user_id=#{user_id} and password = sha2(#{password},256)
+		select user_id,user_nm,pswd,user_eml_addr,reg_dt,mdfcn_dt,authrt_id,site_id 
+		from tb_user where user_id=#{user_id} and pswd = sha2(#{pswd},256)
 	</select>
 	
 	
@@ -46,8 +46,8 @@
 		<if test="searchType == 'user_id'.toString()">
 			and user_id like CONCAT('%',#{keyword},'%')
 		</if>
-		<if test="searchType == 'user_name'.toString()">
-			and user_name like CONCAT('%',#{keyword},'%')
+		<if test="searchType == 'user_nm'.toString()">
+			and user_nm like CONCAT('%',#{keyword},'%')
 		</if>
 	</sql>
 	
@@ -67,18 +67,18 @@
 			INSERT INTO tb_user
     		(
     		 user_id
-			,user_name
-			,password
+			,user_nm
+			,pswd
 			,email
-			,create_time
+			,reg_dt
 			,role_id
 			,site_id
 			)
     		values
     		(
     		 #{user_id}
-			,#{user_name}
-			,sha2(#{password},256)
+			,#{user_nm}
+			,sha2(#{pswd},256)
 			,#{email}
 			,CURRENT_TIMESTAMP
 			,#{role_id}
@@ -90,37 +90,37 @@
     
 	<select id="read_user" resultType="UserVO">
 		SELECT a.user_id      as user_id
-			  ,a.user_name    as user_name
-			  ,a.password     as password
-			  ,a.email        as email
-			  ,a.create_time  as create_time
-			  ,a.update_time  as update_time
-			  ,a.role_id      as role_id
+			  ,a.user_nm    as user_nm
+			  ,a.pswd     as pswd
+			  ,a.user_eml_addr        as user_eml_addr
+			  ,a.reg_dt  as reg_dt
+			  ,a.mdfcn_dt  as mdfcn_dt
+			  ,a.authrt_id      as authrt_id
  			  ,a.site_id      as site_id
-			  ,b.role_name    as role_name
-			  ,c.site_name    as site_name
+			  ,b.role_nm    as role_nm
+			  ,c.site_nm    as site_nm
 		  FROM tb_user a
-		  INNER JOIN tb_role b on a.role_id = b.role_id
+		  INNER JOIN tb_authrt b on a.authrt_id = b.authrt_id
 		  LEFT OUTER JOIN tb_site c on a.site_id = c.site_id
 		  WHERE a.user_id = #{user_id}
 	</select>
 	
-	<select id="password_check" resultType="int">
+	<select id="pswd_check" resultType="int">
 		SELECT count(*)
 		  FROM tb_user
 		 WHERE user_id = #{user_id}
-		   and password = sha2(#{password_before},256)
+		   and pswd = sha2(#{pswd_before},256)
 	</select>
 	
 	<update id="update_user">
 		update tb_user
-		set    user_name     = #{user_name}
-		      ,email 		 = #{email}
-		      ,update_time	 = CURRENT_TIMESTAMP
+		set    user_nm     = #{user_nm}
+		      ,user_eml_addr 		 = #{email}
+		      ,mdfcn_dt	 = CURRENT_TIMESTAMP
 		   <if test="pw_change == true">
-		      ,password		 = sha2(#{password},256)
+		      ,pswd		 = sha2(#{pswd},256)
            </if>
-		      ,role_id		 = #{role_id}
+		      ,authrt_id	 = #{authrt_id}
 		      ,site_id		 = #{site_id}  
 		where user_id 		 = #{user_id}
 	</update>

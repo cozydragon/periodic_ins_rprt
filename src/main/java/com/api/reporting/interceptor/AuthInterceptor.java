@@ -37,13 +37,13 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 		
 		
 		
-	    // 1. handler Á¾·ù È®ÀÎ
+	    // 1. handler ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 
-	    // °ü½É»ç´Â Controller¿¡ ÀÖ´Â ¸Þ¼­µåÀÌ¹Ç·Î HandlerMethod Å¸ÀÔÀÎÁö Ã¼Å©
+	    // ï¿½ï¿½ï¿½É»ï¿½ï¿½ Controllerï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½Ì¹Ç·ï¿½ HandlerMethod Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼Å©
 
 	    if( handler instanceof HandlerMethod == false ) {
 
-	      // return trueÀÌ¸é  Controller¿¡ ÀÖ´Â ¸Þ¼­µå°¡ ¾Æ´Ï¹Ç·Î, ±×´ë·Î ÄÁÆ®·Ñ·¯·Î ÁøÇà
+	      // return trueï¿½Ì¸ï¿½  Controllerï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Þ¼ï¿½ï¿½å°¡ ï¿½Æ´Ï¹Ç·ï¿½, ï¿½×´ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ñ·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 	      return true;
 
@@ -51,20 +51,20 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 
 	 
 
-	    // 2.Çü º¯È¯
+	    // 2.ï¿½ï¿½ ï¿½ï¿½È¯
 
 	    HandlerMethod handlerMethod = (HandlerMethod)handler;
 
 	     
 
 
-	    // 3. @Auth°¡ ÀÖ´Â °æ¿ìÀÌ¹Ç·Î, ¼¼¼ÇÀÌ ÀÖ´ÂÁö Ã¼Å©
+	    // 3. @Authï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½Ì¹Ç·ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ Ã¼Å©
 
 	    HttpSession session = request.getSession();
 
 	    if( session == null ) {
 
-	      // ·Î±×ÀÎ È­¸éÀ¸·Î ÀÌµ¿
+	      // ï¿½Î±ï¿½ï¿½ï¿½ È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 
 	      response.sendRedirect(request.getContextPath() + "/user/login");
 
@@ -74,7 +74,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 
 	     
 
-	    // 4. ¼¼¼ÇÀÌ Á¸ÀçÇÏ¸é À¯È¿ÇÑ À¯ÀúÀÎÁö È®ÀÎ
+	    // 4. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½È¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 
 	    UserVO authUser = (UserVO)session.getAttribute("LOGIN");
 
@@ -90,13 +90,13 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 
 	    
 
-	    // 5. @Auth ¹Þ¾Æ¿À±â
+	    // 5. @Auth ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½
 
 	    Auth auth = handlerMethod.getMethodAnnotation(Auth.class);
 
 	     
 
-	    // 6. method¿¡ @Auth°¡ ¾ø´Â °æ¿ì, Áï ÀÎÁõÀÌ ÇÊ¿ä ¾ø´Â ¿äÃ»
+	    // 6. methodï¿½ï¿½ @Authï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã»
 
 	    if( auth == null ) {
 
@@ -106,17 +106,17 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 
 	     
 	    
-	    // 7. adminÀÏ °æ¿ì
+	    // 7. adminï¿½ï¿½ ï¿½ï¿½ï¿½
 
 	    String role = auth.role().toString();
 
 	    if( "ADMIN".equals(role) ) {
 
-	      // adminÀÓÀ» ¾Ë ¼ö ÀÖ´Â Á¶°ÇÀ» ÀÛ¼ºÇÑ´Ù.
+	      // adminï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½Ñ´ï¿½.
 
-	      // ex) ¼­ºñ½ºÀÇ id°¡ sangwhaÀÌ¸é adminÀÌ´Ù.
+	      // ex) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ idï¿½ï¿½ sangwhaï¿½Ì¸ï¿½ adminï¿½Ì´ï¿½.
 
-	      if( "ADMIN".equals(roleSession) == false ){   // adminÀÌ ¾Æ´Ï¹Ç·Î return false
+	      if( "ADMIN".equals(roleSession) == false ){   // adminï¿½ï¿½ ï¿½Æ´Ï¹Ç·ï¿½ return false
 
 	        response.sendRedirect(request.getHeader("REFERER"));
 
@@ -126,7 +126,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 
 	    }
 
-	    // 8. Á¢±ÙÇã°¡, Áï ¸Þ¼­µå¸¦ ½ÇÇàÇÏµµ·Ï ÇÔ
+	    // 8. ï¿½ï¿½ï¿½ï¿½ï¿½ã°¡, ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ ï¿½ï¿½
 
 	    return true;
 
