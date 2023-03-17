@@ -6,13 +6,14 @@
 
 <c:choose>
 	<c:when test="${not empty sessionScope.ROLE}">
-		<c:set var="role_id" value="${sessionScope.ROLE}">
+		<c:set var="role_id" value="${sessionScope.ROLE}"/>
 	</c:when>
 	<c:otherwise>
 		alert ("로그인 시간이 만료되어 로그인화면으로 이동합니다.");
 		response.sendRedirect("/");
 	</c:otherwise>
 </c:choose> 
+
 
 </script>
 	<div class="header">
