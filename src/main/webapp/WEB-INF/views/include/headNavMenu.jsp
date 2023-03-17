@@ -10,7 +10,7 @@
 	</c:when>
 	<c:otherwise>
 		alert ("로그인 시간이 만료되어 로그인화면으로 이동합니다.");
-		response.sendRedirect("/");
+		response.sendRedirect("/user/login");
 	</c:otherwise>
 </c:choose> 
 
