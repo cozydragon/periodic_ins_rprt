@@ -13,11 +13,7 @@
  						<li><a href="/menu/menu102">Storage 점검</a></li>
 					</ul>
 				</li>
-				<!-- 				
-				<li><a href="#"><i class="fa fa-clipboard"></i><span class="title">보통교부세</span><span class="arrow"></span></a>
-					<ul class="nav_2d">
  						<li><a href="/menu/menu101">수요조사 기초자료 관리</a></li>
-						<li><a href="/menu/menu102">수요조사 이상내역 검출</a></li>						
 						<li><a href="/menu/menu103">기초단체입력자료 검토</a></li>
 						<li><a href="/menu/menu104"><font color="red">기초통계자료 업로드 및 수정</font></a></li>
 						<li><a href="/menu/menu105"><font color="red">보통교부세 통계 일치 확인</font></a></li>
