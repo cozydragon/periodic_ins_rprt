@@ -5,7 +5,7 @@
 <script>    
 
 <c:choose>
-	<c:when test="${not empty sessionScope.LOGIN.getSite_id()}">
+	<c:when test="${sessionScope.LOGIN.getSite_id() != null}">
 		<c:set var="site_id" value="${sessionScope.LOGIN.getSite_id()}"/>
 	</c:when>
 	<c:otherwise>
