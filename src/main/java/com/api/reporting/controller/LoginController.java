@@ -92,9 +92,7 @@ public class LoginController {
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
     public String logout(HttpSession session, Model model)
     {
-        //�α׾ƿ� ���ǿ� �ִ� ���� ����� �Ͱ� ����.
-        //delete�ϸ� redirect
-        logger.info("�α׾ƿ�  ����");
+         logger.info("�α׾ƿ�  ����");
         session.removeAttribute("LOGIN");
 		session.removeAttribute("loginyn");
         logger.info("�α׾ƿ�  ����");

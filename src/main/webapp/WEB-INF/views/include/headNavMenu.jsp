@@ -5,8 +5,8 @@
 <script>    
 
 <c:choose>
-	<c:when test="${sessionScope.LOGIN.getSite_id() != null}">
-		<c:set var="site_id" value="${sessionScope.LOGIN.getSite_id()}"/>
+	<c:when test="${not empty sessionScope.site_id}">
+		<c:set var="site_id" value="${sessionScope.site_id}"/>
 	</c:when>
 	<c:otherwise>
 		alert ("로그인 시간이 만료되어 로그인화면으로 이동합니다.");

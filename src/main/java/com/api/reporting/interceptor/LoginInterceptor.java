@@ -53,7 +53,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		
 		ModelMap modelMap = modelAndView.getModelMap();
 		UserVO userVO = (UserVO) modelMap.get("userVO");
-		Object authrt = modelMap.get("authrt");
 		Object site_id = modelMap.get("site_id");
 		
 		if(userVO != null){
