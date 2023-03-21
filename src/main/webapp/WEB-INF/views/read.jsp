@@ -1,4 +1,4 @@
-<%@page import="com.api.reporting.dto.BoardVO"%>
+<%@page import="com.api.reporting.cmn.dto.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>

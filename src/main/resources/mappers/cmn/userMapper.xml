@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.reporting.cmn.mapper.userMapper">
+	
+	<select id="show_user" resultType="UserVO">
+		SELECT a.user_id
+			  ,a.user_nm
+			  ,a.pswd
+			  ,a.user_eml_addr
+			  ,a.reg_dt
+			  ,a.mdfcn_dt
+			  ,a.site_id
+			  ,b.authrt_nm
+			  ,c.site_nm
+		  FROM tb_cmn_user a
+		  LEFT OUTER JOIN tb_cmn_site c on a.site_id = c.site_id
+		  WHERE 1=1
+		  <include refid="search"/>
+			order by user_id desc
+			limit #{pageStart},#{perPageNum}
+	</select>
+
+	
+	<select id="login" resultType="UserVO">
+		select user_id,user_nm,pswd,user_eml_addr,reg_dt,mdfcn_dt,site_id 
+		from tb_cmn_user where user_id=#{user_id} and pswd = sha2(#{pswd},256)
+	</select>
+	
+	
+	<sql id="search">
+		<if test="searchType == 'user_id'.toString()">
+			and user_id like CONCAT('%',#{keyword},'%')
+		</if>
+		<if test="searchType == 'user_nm'.toString()">
+			and user_nm like CONCAT('%',#{keyword},'%')
+		</if>
+	</sql>
+	
+	<select id="user_count" resultType="int">
+		<![CDATA[
+		
+			select	count(*)
+			from 	tb_cmn_user
+			where   1=1
+		]]>
+		<include refid="search"/>
+	</select>
+	
+	
+	 <insert id="write_user">
+
+			INSERT INTO tb_cmn_user
+    		(
+    		 user_id
+			,user_nm
+			,pswd
+			,email
+			,reg_dt
+			,site_id
+			)
+    		values
+    		(
+    		 #{user_id}
+			,#{user_nm}
+			,sha2(#{pswd},256)
+			,#{email}
+			,CURRENT_TIMESTAMP
+			,#{site_id}
+    		)
+	
+    </insert>
+    
+    
+	<select id="read_user" resultType="UserVO">
+		SELECT a.user_id      as user_id
+			  ,a.user_nm    as user_nm
+			  ,a.pswd     as pswd
+			  ,a.user_eml_addr        as user_eml_addr
+			  ,a.reg_dt  as reg_dt
+			  ,a.mdfcn_dt  as mdfcn_dt
+			  ,a.authrt_id      as authrt_id
+ 			  ,a.site_id      as site_id
+			  ,b.role_nm    as role_nm
+			  ,c.site_nm    as site_nm
+		  FROM tb_cmn_user a
+		  INNER JOIN tb_cmn_authrt b on a.authrt_id = b.authrt_id
+		  LEFT OUTER JOIN tb_cmn_site c on a.site_id = c.site_id
+		  WHERE a.user_id = #{user_id}
+	</select>
+	
+	<select id="pswd_check" resultType="int">
+		SELECT count(*)
+		  FROM tb_cmn_user
+		 WHERE user_id = #{user_id}
+		   and pswd = sha2(#{pswd_before},256)
+	</select>
+	
+	<update id="update_user">
+		update tb_cmn_user
+		set    user_nm     = #{user_nm}
+		      ,user_eml_addr 		 = #{email}
+		      ,mdfcn_dt	 = CURRENT_TIMESTAMP
+		   <if test="pw_change == true">
+		      ,pswd		 = sha2(#{pswd},256)
+           </if>
+		      ,authrt_id	 = #{authrt_id}
+		      ,site_id		 = #{site_id}  
+		where user_id 		 = #{user_id}
+	</update>
+	
+	<delete id="delete_user">
+		delete from tb_cmn_user where user_id = #{user_id}
+	</delete>
+	
+</mapper>

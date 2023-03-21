@@ -5,7 +5,7 @@
 	<configuration>
 	
 		<typeAliases>
-			<package name="com.api.reporting.dto"/>
+			<package name="com.api.reporting.cmn.dto"/>
 		</typeAliases>
 		
 	</configuration>
