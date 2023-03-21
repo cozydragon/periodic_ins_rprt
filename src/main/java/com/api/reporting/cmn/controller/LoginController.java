@@ -1,5 +1,6 @@
 package com.api.reporting.cmn.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.api.reporting.cmn.dto.LoginDTO;
-import com.api.reporting.cmn.dto.PageMaker;
+import com.api.reporting.cmn.dto.MenuDTO;
 import com.api.reporting.cmn.dto.SearchCriteria;
 import com.api.reporting.cmn.dto.UserVO;
 import com.api.reporting.cmn.interceptor.Auth;
@@ -74,28 +75,29 @@ public class LoginController {
 
 		logger.debug("=======loginCheck");
 		
-		UserVO vo = service.login(dto);
-		if(vo == null){
+		/* id 정보 셋팅 */
+		UserVO userVo = service.login(dto);
+		if(userVo == null){
 			return ;
 		}
-		
-		model.addAttribute("userVO",vo);
-		
-		String site_id = vo.getSite_id(); 
-		
+
+		model.addAttribute("userVO",userVo);
+		String site_id = userVo.getSite_id(); 
 		model.addAttribute("site_id",site_id);
 		
-		
+		/* 메뉴 정보 셋팅 */
+		List <MenuDTO> menuDto = service.selectMenu(dto);
+		model.addAttribute("menuDTO",menuDto);
+				
 	}
 
 	
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
     public String logout(HttpSession session, Model model)
     {
-         logger.info("�α׾ƿ�  ����");
+        logger.info("로그아웃");
         session.removeAttribute("LOGIN");
 		session.removeAttribute("loginyn");
-        logger.info("�α׾ƿ�  ����");
         return "redirect:/user/login";
     }
 

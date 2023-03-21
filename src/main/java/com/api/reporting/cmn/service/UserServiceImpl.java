@@ -1,5 +1,6 @@
 package com.api.reporting.cmn.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.api.reporting.cmn.dao.UserDAO;
 import com.api.reporting.cmn.dto.LoginDTO;
+import com.api.reporting.cmn.dto.MenuDTO;
 import com.api.reporting.cmn.dto.UserVO;
 
 @Service
@@ -25,7 +27,13 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public UserVO login(LoginDTO dto) throws Exception {
 		// TODO Auto-generated method stub
-		return dao.loginDAO(dto);
+		return dao.login(dto);
 	}
 
+	@Override
+	public List <MenuDTO> selectMenu(LoginDTO dto) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectMenu(dto);
+	}	
+	
 }

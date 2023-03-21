@@ -29,6 +29,22 @@
 		from tb_cmn_user where user_id=#{user_id} and pswd = sha2(#{pswd},256)
 	</select>
 	
+	<select id="selectMenu" resultType="MenuDTO">
+		select d.menu_id
+		      ,d.menu_nm
+		      ,d.menu_lvl
+		      ,d.menu_ord
+		      ,d.menu_url
+		      ,d.menu_file
+		from  tb_cmn_user a
+		inner join tb_cmn_authrt_grp b on a.user_id = b.user_id
+		inner join tb_cmn_authrt_menu c on b.authrt_id = c.authrt_id
+		inner join tb_cmn_menu d on c.menu_id = d.menu_id
+		where a.user_id=#{user_id} 
+		group by menu_id
+		order by menu_lvl,menu_ord
+	</select>
+	
 	
 	<sql id="search">
 		<if test="searchType == 'user_id'.toString()">

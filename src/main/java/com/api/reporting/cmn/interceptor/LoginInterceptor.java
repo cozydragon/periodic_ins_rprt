@@ -1,6 +1,8 @@
 package com.api.reporting.cmn.interceptor;
 
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +14,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import com.api.reporting.cmn.dto.MenuDTO;
 import com.api.reporting.cmn.dto.UserVO;
 
 public class LoginInterceptor extends HandlerInterceptorAdapter{
@@ -72,22 +75,27 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 				loginCookie.setMaxAge(60*60*24*7);
 				response.addCookie(loginCookie);
 					
-			}else {
-				Cookie loginCookie = new Cookie("userId","");
-				loginCookie.setPath("/");
-				loginCookie.setMaxAge(60*60*24*7);
-				logger.info("remeber not");
-				response.addCookie(loginCookie);
-			}
-			
-			Object dest = session.getAttribute("dest");
-			response.sendRedirect(dest != null ? (String)dest :"/home");
-			
-		} else {
-			
-			session.setAttribute("loginyn","n");
-
-			response.sendRedirect("/user/login");
+				}else {
+					Cookie loginCookie = new Cookie("userId","");
+					loginCookie.setPath("/");
+					loginCookie.setMaxAge(60*60*24*7);
+					logger.info("remeber not");
+					response.addCookie(loginCookie);
+				}
+				
+				Object dest = session.getAttribute("dest");
+				response.sendRedirect(dest != null ? (String)dest :"/home");
+				
+			} else {
+				
+				session.setAttribute("loginyn","n");
+	
+				response.sendRedirect("/user/login");
 		}
+		
+		List <MenuDTO> menuDto = (List <MenuDTO>) modelMap.get("menuDTO");
+		session.setAttribute("menuDTO", menuDto);
+		
+	    
 	}
 }
