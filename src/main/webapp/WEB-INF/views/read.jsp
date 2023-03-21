@@ -79,7 +79,7 @@
                                 </div>
                                 
                                 <button type="button" class="btn btn-primary clist">목록</button>
-                                <%if (userVO.getUser_id().equals(boardVo.getUser_id()) || role_id.equals("ADMIN") ) { %>
+                                <%if (userVO.getUser_id().equals(boardVo.getUser_id()) || authrt_id.equals("ADMIN") ) { %>
                                 <button type="button" class="btn btn-success cmodify">글 수정</button>
                                 <button type="button" class="btn btn-warning cdelete">삭제</button>
                                 <%} %>

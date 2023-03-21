@@ -18,19 +18,14 @@ public class UserVO {
 	
 	private String site_id;
 
-	//���� ��Ī
 	private String authrt_nm;
 	
-	//�����Ī
 	private String site_nm;
 	
-	//�����Ī
 	private Boolean pw_change;
 	
-	//�����Ī
 	private String pswd_before;
 	
-	//�����Ī
 	private String pswd_confirm;
 
 	public String getUser_id() {

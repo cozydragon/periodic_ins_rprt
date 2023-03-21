@@ -65,7 +65,7 @@ public class AuthInterceptor extends HandlerInterceptorAdapter{
 
 	    }
 	    
-	    String roleSession = (String) session.getAttribute("ROLE");
+	    String roleSession = (String) session.getAttribute("site_id");
 
 	    
 

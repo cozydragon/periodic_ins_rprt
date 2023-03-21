@@ -53,7 +53,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		
 		ModelMap modelMap = modelAndView.getModelMap();
 		UserVO userVO = (UserVO) modelMap.get("userVO");
-		Object role = modelMap.get("role");
+		Object authrt = modelMap.get("authrt");
 		Object site_id = modelMap.get("site_id");
 		
 		if(userVO != null){
@@ -61,8 +61,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 			logger.info("login success");
 			
 			session.setAttribute("LOGIN", userVO);
-			
-			session.setAttribute("ROLE",role);
 			
 			session.setAttribute("site_id",site_id);
 			

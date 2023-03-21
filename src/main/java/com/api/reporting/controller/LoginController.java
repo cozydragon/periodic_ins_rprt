@@ -81,16 +81,6 @@ public class LoginController {
 		
 		model.addAttribute("userVO",vo);
 		
-		String role_id = vo.getAuthrt_id();
-		
-		if ("sangwha".equals(vo.getUser_id())){
-			
-			model.addAttribute("role","ADMIN");
-			
-		}else {
-			model.addAttribute("role",role_id);
-		}
-		
 		String site_id = vo.getSite_id(); 
 		
 		model.addAttribute("site_id",site_id);
@@ -124,7 +114,7 @@ public class LoginController {
 			
 			model.addAttribute("UserVO",adminService.read_user(userVO.getUser_id()));
 
-			model.addAttribute("code_role",utilService.show_code("tb_authrt","authrt_id","role_name"));
+			model.addAttribute("code_role",utilService.show_code("tb_cmn_authrt","authrt_id","role_name"));
 			model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_name","site_name","asc"));
 			
 		} catch (Exception e){
@@ -141,7 +131,7 @@ public class LoginController {
 		try {
 			model.addAttribute("UserVO",adminService.read_user(user_id));
 
-			model.addAttribute("code_role",utilService.show_code("tb_authrt","authrt_id","authrt_nm"));
+			model.addAttribute("code_role",utilService.show_code("tb_cmn_authrt","authrt_id","authrt_nm"));
 			model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_nm","site_nm","asc"));
 
 		} catch (Exception e) { 

@@ -82,7 +82,7 @@
                                         <td style="text-align: center;">${UserVO.user_name}</td>
                                        <!--  <td style="text-align: center;">${UserVO.password}</td> -->
                                         <td style="text-align: center;">${UserVO.email}</td>
-                                        <td style="text-align: center;">${UserVO.role_id}</td>
+                                        <td style="text-align: center;">${UserVO.authrt_id}</td>
                                         <td style="text-align: center;">${UserVO.role_name}</td>
                                         <td style="text-align: center;">${UserVO.site_id}</td>
                                         <td style="text-align: center;">${UserVO.site_name}</td>

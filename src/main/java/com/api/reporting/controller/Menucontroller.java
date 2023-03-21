@@ -53,7 +53,7 @@ public class Menucontroller {
 			//model.addAttribute(pageMaker);
 			//model.addAttribute("code_detail",utilService.show_code_where("tb_code_detail","code_detail","code_name_kr","code_master","10"));
 			
-			//model.addAttribute("code_authrt",utilService.show_code("tb_authrt","authrt_id","authrt_nm"));
+			//model.addAttribute("code_authrt",utilService.show_code("tb_cmn_authrt","authrt_id","authrt_nm"));
             //model.addAttribute("code_site",utilService.show_code_order("tb_site","site_id","site_nm","site_nm","asc"));
 			//model.addAttribute("code_module_variety",utilService.show_code("tb_module_variety","module_variety","variety_nm"));
 

@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<%String role_id = session.getAttribute("ROLE").toString(); 
+<%String site_id = session.getAttribute("site_id").toString(); 
   
   UserVO userVO = (UserVO) session.getAttribute("LOGIN");
 %>
@@ -15,7 +15,7 @@
                 </button>
                 <a class="navbar-brand" href="/">기본 게시판</a>
                 <a class="navbar-brand" href="/log/day-report">로그확인</a>
-                <%if (role_id.equals("ADMIN")) { %>
+                <%if (authrt_id.equals("ADMIN")) { %>
                 <a class="navbar-brand" href="/admin/show-site">관리자</a>
                 <% } %>
                
