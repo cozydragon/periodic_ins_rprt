@@ -78,16 +78,16 @@ if (loginyn == null){
                    </button>
                </div>
            </div>
-
-           <div class="form-group m-t-30">
-               <div class="col-sm-7">
-                   <a href="" class="text-muted"><i class="fa fa-lock m-r-5"></i> 비밀번호를 잊으셨나요?</a>
-               </div>
-               <div class="col-sm-5 text-right">
-                   <a href="" class="text-muted">신규신청</a>
-               </div>
-           </div>
        </form>
+       
+       <div class="form-group m-t-30">
+           <div class="col-sm-7">
+               <a href="" class="text-muted"><i class="fa fa-lock m-r-5"></i> 비밀번호를 잊으셨나요?</a>
+           </div>
+           <div class="col-sm-5 text-right">
+               <a href="./signup" class="text-muted">신규신청</a>
+           </div>
+       </div>
    </div>
 
 	<script type="text/javascript">
