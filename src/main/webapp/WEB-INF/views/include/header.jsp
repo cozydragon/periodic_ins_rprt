@@ -19,6 +19,9 @@
 <!-- Custom Fonts -->
 <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+<!-- Custom favicon joonyoung -->
+<link rel="icon" href="/resources/img/favicon.ico" type="image/x-icon">
+
 <link rel="stylesheet" type="text/css" href="/resources/vendor/bootstrap/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="/resources/vendor/bootstrap/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="/resources/vendor/bootstrap/css/jquery.jscrollpane.css">
@@ -43,8 +46,8 @@
 <script src="/resources/data/morris-data.js"></script> -->
 
 <!-- Custom Theme JavaScript -->
-   <script src="/resources/dist/js/sb-admin-2.js"></script>
-   
+<!-- <script src="/resources/dist/js/sb-admin-2.js"></script> -->
+<script src="/resources/js/sb-admin-2.js"></script>
 
 <script src='/resources/vendor/bootstrap/js/jquery.cookie.js'></script>
 <script src="/resources/vendor/bootstrap/js/jquery.splitter.js"></script>
