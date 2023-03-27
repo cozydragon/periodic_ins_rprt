@@ -26,9 +26,9 @@
 			  ,a.site_id
 			  ,b.authrt_nm
 			  ,c.site_nm
-		  FROM tb_user a
-		  INNER JOIN tb_authrt b on a.role_id = b.role_id
-		  LEFT OUTER JOIN tb_site c on a.site_id = c.site_id
+		  FROM tb_cmn_user a
+		  INNER JOIN tb_cmn_authrt b on a.role_id = b.role_id
+		  LEFT OUTER JOIN tb_cmn_site c on a.site_id = c.site_id
 		  WHERE 1=1
 		  <include refid="search"/>
 			order by user_id desc
@@ -37,8 +37,18 @@
 
 	
 	<select id="login" resultType="UserVO">
-		select user_id,user_nm,pswd,user_eml_addr,reg_dt,mdfcn_dt,authrt_id,site_id 
-		from tb_user where user_id=#{user_id} and pswd = sha2(#{pswd},256)
+		select 
+			 user_id
+			,user_nm
+			,pswd
+			,user_eml_addr
+			,site_id
+			,reg_id 
+			,reg_dt
+			,mdfcn_id
+			,mdfcn_dt
+		from tb_cmn_user 
+		where user_id=#{user_id} and pswd = sha2(#{pswd},256)
 	</select>
 	
 	
@@ -51,11 +61,46 @@
 		</if>
 	</sql>
 	
+	<!-- 아이디 중복 체크 -->
+	<select id="userIdCheck" resultType="int">
+		<![CDATA[
+			select IFNULL(count(*), 0)
+			from tb_cmn_user
+			where 1=1
+			and user_id = #{user_id}
+		]]>
+	</select>
+	
+	<insert id="join">
+		INSERT INTO tb_cmn_user
+   		(
+	   		  user_id
+			, user_nm
+			, pswd
+			, user_eml_addr
+			, site_id
+			, authrt_id
+			, reg_dt
+			, mdfcn_dt
+		)
+   		values
+   		(
+	   		  #{user_id}
+			, #{user_nm}
+			, sha2(#{pswd},256)
+			, #{user_eml_addr}
+			, #{site_id}
+			, #{authrt_id}
+			, NOW()
+			, NOW()
+   		)
+    </insert>
+    
 	<select id="user_count" resultType="int">
 		<![CDATA[
 		
 			select	count(*)
-			from 	tb_user
+			from 	tb_cmn_user
 			where   1=1
 		]]>
 		<include refid="search"/>
@@ -64,7 +109,7 @@
 	
 	 <insert id="write_user">
 
-			INSERT INTO tb_user
+			INSERT INTO tb_cmn_user
     		(
     		 user_id
 			,user_nm
@@ -99,21 +144,21 @@
  			  ,a.site_id      as site_id
 			  ,b.role_nm    as role_nm
 			  ,c.site_nm    as site_nm
-		  FROM tb_user a
-		  INNER JOIN tb_authrt b on a.authrt_id = b.authrt_id
-		  LEFT OUTER JOIN tb_site c on a.site_id = c.site_id
+		  FROM tb_cmn_user a
+		  INNER JOIN tb_cmn_authrt b on a.authrt_id = b.authrt_id
+		  LEFT OUTER JOIN tb_cmn_site c on a.site_id = c.site_id
 		  WHERE a.user_id = #{user_id}
 	</select>
 	
 	<select id="pswd_check" resultType="int">
 		SELECT count(*)
-		  FROM tb_user
+		  FROM tb_cmn_user
 		 WHERE user_id = #{user_id}
 		   and pswd = sha2(#{pswd_before},256)
 	</select>
 	
 	<update id="update_user">
-		update tb_user
+		update tb_cmn_user
 		set    user_nm     = #{user_nm}
 		      ,user_eml_addr 		 = #{email}
 		      ,mdfcn_dt	 = CURRENT_TIMESTAMP
@@ -126,7 +171,7 @@
 	</update>
 	
 	<delete id="delete_user">
-		delete from tb_user where user_id = #{user_id}
+		delete from tb_cmn_user where user_id = #{user_id}
 	</delete>
 	
 </mapper>
