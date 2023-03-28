@@ -78,7 +78,7 @@
 		]]>
 	</select>
 	
-	<insert id="join">
+	<insert id="join" resultType="int">
 		INSERT INTO tb_cmn_user
    		(
 	   		  user_id
@@ -86,7 +86,8 @@
 			, pswd
 			, user_eml_addr
 			, site_id
-			, authrt_id
+			, reg_id
+			, mdfcn_id
 			, reg_dt
 			, mdfcn_dt
 		)
@@ -97,7 +98,8 @@
 			, sha2(#{pswd},256)
 			, #{user_eml_addr}
 			, #{site_id}
-			, #{authrt_id}
+			, #{reg_id}
+			, #{mdfcn_id}
 			, NOW()
 			, NOW()
    		)
