@@ -68,11 +68,11 @@
 									<div class="col-sm-3">
 										<div class="form-group">
 	                                        <label>권한</label>
-											<select class="form-control" name="role_id" id="role_id" disabled="disabled">
+											<select class="form-control" name="authrt_id" id="authrt_id" disabled="disabled">
 												<option value="">선택</option>
 												<c:forEach var="code_role" items="${code_role}">
 													<option value="<c:out value="${code_role.code}" />"
-													<c:if test="${UserVO.role_id == code_role.code }">selected="selected"</c:if>>
+													<c:if test="${UserVO.authrt_id == code_role.code }">selected="selected"</c:if>>
 														<c:out value="${code_role.code_name} (${code_role.code})"/>
 													</option>
 												</c:forEach>

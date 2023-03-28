@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.api.reporting.cmn.mapper.boardMapper">
+	<insert id="insertBoard">
+		insert into tb_board (title,contents, writer,user_id)
+		values (#{title},#{contents},#{writer},#{user_id})
+	</insert>
+	
+	<select id="readBoard" resultType="BoardVO">
+		select
+			bno, title, contents, writer, regdate, viewcnt ,user_id
+		from tb_board
+		where bno = #{bno}
+	</select>
+	
+	<update id="updateBoard">
+		update tb_board set title = #{title}, contents = #{contents}
+		where bno = #{bno}
+	</update>
+	
+	<delete id="deleteBoard">
+		delete from tb_board where bno = #{bno}
+	</delete>
+	
+	<select id="basicList" resultType="BoardVO">
+		<![CDATA[
+			select
+				bno, title, contents, writer, regdate, viewcnt,user_id
+			from tb_board
+			where bno > 0
+			order by bno desc, regdate desc
+		]]>
+	</select>
+
+	<select id="pageList" resultType="BoardVO">
+		<![CDATA[
+			select
+				bno, title, contents, writer, regdate, viewcnt,user_id
+			from tb_board
+			where bno > 0
+			order by bno desc, regdate desc
+			limit #{page},10
+		]]>
+	</select>
+
+	<select id="pageListCriteria" resultType="BoardVO">
+		<![CDATA[
+			select
+				bno, title, contents, writer, regdate, viewcnt,user_id
+			from tb_board
+			where bno > 0
+			order by bno desc, regdate desc
+			limit #{pageStart},#{perPageNum}
+		]]>
+	</select>
+	
+	<select id="countPaging" resultType="int">
+		<![CDATA[
+			select
+				count(bno)
+			from tb_board
+			where
+				bno > 0
+		]]>
+	</select>
+
+	<select id="searchCriteria" resultType="BoardVO">
+		<![CDATA[
+			select
+				bno, title, contents, writer, regdate, viewcnt,user_id
+			from tb_board
+			where bno > 0
+		]]>
+			<include refid="search"/>
+		<![CDATA[
+			order by bno desc, regdate desc
+			limit #{pageStart},#{perPageNum}
+		]]>
+	</select>
+	
+	<select id="searchCountPaging" resultType="int">
+		<![CDATA[
+			select
+				count(bno)
+			from tb_board
+			where
+				bno > 0
+		]]>
+		<include refid="search"/>
+	</select>
+	
+	<sql id="search">
+		<if test="searchType == 't'.toString()">
+			and title like CONCAT('%',#{keyword},'%')
+		</if>
+		<if test="searchType == 'c'.toString()">
+			and contents like CONCAT('%',#{keyword},'%')
+		</if>
+		<if test="searchType == 'w'.toString()">
+			and writer like CONCAT('%',#{keyword},'%')
+		</if>
+	</sql>
+	
+	<update id="updateViewCnt">
+		update tb_board set viewcnt = viewcnt +1 where bno = #{bno}
+	</update>
+</mapper>

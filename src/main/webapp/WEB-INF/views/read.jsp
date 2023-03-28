@@ -1,4 +1,4 @@
-<%@page import="com.api.reporting.dto.BoardVO"%>
+<%@page import="com.api.reporting.cmn.dto.BoardVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -79,7 +79,7 @@
                                 </div>
                                 
                                 <button type="button" class="btn btn-primary clist">목록</button>
-                                <%if (userVO.getUser_id().equals(boardVo.getUser_id()) || role_id.equals("ADMIN") ) { %>
+                                <%if (userVO.getUser_id().equals(boardVo.getUser_id()) || authrt_id.equals("ADMIN") ) { %>
                                 <button type="button" class="btn btn-success cmodify">글 수정</button>
                                 <button type="button" class="btn btn-warning cdelete">삭제</button>
                                 <%} %>

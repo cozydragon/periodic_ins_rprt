@@ -46,7 +46,7 @@
                             <div class="col-sm-10">
                            	<!-- 검색 옵션 들어갈 자리 -->
 	                            <div id="dataTables-example_filter" class="dataTables_filter">
-	                               <% if (role_id.equals("ADMIN")) { %>
+	                               <% if (authrt_id.equals("ADMIN")) { %>
                                     <label>사이트</label>
 									<select class="form-control" name="site_id" id="site_id">
 										<option value="">선택</option>

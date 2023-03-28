@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api.reporting.cmn.mapper.utilMapper">
+
+	<select id="show_code" resultType="CodeDTO">
+		select ${code} code
+		      ,${code_name} code_name
+		  from ${table_name}
+	</select>
+	
+	<select id="show_code_length" resultType="CodeDTO">
+		select ${code} code
+		      ,case when length(${code_name}) > ${name_length} then concat(left(${code_name},${name_length}),'...') else code_message end code_name
+		  from ${table_name}
+	</select>
+	
+	<select id="show_code_where" resultType="CodeDTO">
+		select ${code} code
+		      ,${code_name} code_name
+		  from ${table_name}
+		 where ${code_where1} = #{code_where2}
+	</select>
+
+	<select id="show_code_order" resultType="CodeDTO">
+		select ${code} code
+		,${code_name} code_name
+		from ${table_name}
+		order by  ${order_name} ${order_kind}
+	</select>
+
+	<select id="show_code_module_variety" resultType="CodeDTO">
+		select b.module_variety code
+		      ,b.variety_name code_name
+		from 
+			(
+			SELECT distinct module_variety 
+			FROM tb_module
+			where site_id = #{code}
+			) a
+			join tb_module_variety b on a.module_variety = b.module_variety
+		
+	
+	</select>
+	
+	<select id="show_code_module_serial" resultType="CodeDTO">
+		select	module_serial code,serial_name code_name
+		from	tb_module
+		where 	case when '${module_variety}' = '' then 1=1 else module_variety = '${module_variety}' end
+		  and   site_id = #{site_id}
+	
+	</select>
+
+	<select id="show_year" resultType="CodeDTO">
+		select year(activate_time) code,year(activate_time) code_name
+		from tb_regist_activate
+		group by 1,2
+		order by 1 desc
+	</select>
+	
+	<select id="show_code_detail" resultType="CodeDTO">
+		select code_master
+			  ,code_detail
+		      ,code_name_kr
+		  from ${table_name}
+		 where code_master = #{code_master}
+	</select>
+	
+</mapper>

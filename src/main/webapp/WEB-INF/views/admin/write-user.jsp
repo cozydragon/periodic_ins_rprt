@@ -64,7 +64,7 @@
 									<div class="col-sm-3">
 										<div class="form-group">
 	                                        <label>권한</label>
-											<select class="form-control" name="role_id" id="role_id">
+											<select class="form-control" name="authrt_id" id="authrt_id">
 												<option value="">선택</option>
 												<c:forEach var="code_role" items="${code_role}">
 													<option value="<c:out value="${code_role.code}" />">
@@ -143,7 +143,7 @@
 				  error = error + "- 비밀번호를 입력하여 주십시오. \n"
 			  }
 			  
-			  if( $('#role_id').val() == '' ) {
+			  if( $('#authrt_id').val() == '' ) {
 				  error = error + "- 권한을 선택하여 주십시오. \n"
 			  }
 			  
