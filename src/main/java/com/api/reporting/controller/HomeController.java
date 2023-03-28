@@ -26,11 +26,10 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-
 	@Auth
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home(Locale locale,Model model) {
-		logger.info("====home È­¸é====");
+		
 		return "home";
 	}
 	

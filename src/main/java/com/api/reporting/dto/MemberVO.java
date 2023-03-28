@@ -11,9 +11,11 @@ public class MemberVO {
 	
 	private String user_eml_addr;
 	
-	private String authrt_id;
-	
 	private String site_id;
+	
+	private String reg_id;
+	
+	private String mdfcn_id;
 	
 	private Date reg_dt;
 	
@@ -51,20 +53,28 @@ public class MemberVO {
 		this.user_eml_addr = user_eml_addr;
 	}
 
-	public String getAuthrt_id() {
-		return authrt_id;
-	}
-
-	public void setAuthrt_id(String authrt_id) {
-		this.authrt_id = authrt_id;
-	}
-
 	public String getSite_id() {
 		return site_id;
 	}
 
 	public void setSite_id(String site_id) {
 		this.site_id = site_id;
+	}
+	
+	public String getReg_id() {
+		return reg_id;
+	}
+
+	public void setReg_id(String reg_id) {
+		this.reg_id = reg_id;
+	}
+
+	public String getMdfcn_id() {
+		return mdfcn_id;
+	}
+
+	public void setMdfcn_id(String mdfcn_id) {
+		this.mdfcn_id = mdfcn_id;
 	}
 
 	public Date getReg_dt() {
@@ -81,5 +91,12 @@ public class MemberVO {
 
 	public void setMdfcn_dt(Date mdfcn_dt) {
 		this.mdfcn_dt = mdfcn_dt;
+	}
+	
+	public String toString() {
+		return "[ " +   "User ID : " + getUser_id() + 
+					  ", User Name : " + getUser_nm() + 
+					  ", User Email : " + getUser_eml_addr() + 
+					  ", User Role : " + getSite_id() + " ]";
 	}
 }

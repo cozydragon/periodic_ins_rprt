@@ -111,10 +111,9 @@ public class LoginController {
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
     public String logout(HttpSession session, Model model)
     {
-        logger.info("�α׾ƿ�  ����");
+        logger.info("Call Logout");
         session.removeAttribute("LOGIN");
 		session.removeAttribute("loginyn");
-        logger.info("�α׾ƿ�  ����");
         return "redirect:/user/login";
     }
 	
@@ -128,35 +127,46 @@ public class LoginController {
 	@RequestMapping(value="/join", method = RequestMethod.POST)
 	public Map<String, String> join(@RequestParam Map<String, Object> map) {
 		
-		logger.info("유저 명 : " + map.get("user_nm").toString());
-		logger.info("유저 아이디 : " + map.get("user_id").toString());
-		map.put("authrt_id", "test");
-		map.put("site_id", "test");
-		
+		// 회원가입 멤버 VO
 		MemberVO vo = new MemberVO();
+		
+		// 유저아이디
+		String uId = map.get("user_id").toString();
+		
+		map.put("reg_id", uId);			// 등록 아이디
+		map.put("mdfcn_id", uId);		// 수정 아이디
+		map.put("site_id", "admin");	// 권한 아이디 (default : admin)
 		
 		vo.setUser_nm(map.get("user_nm").toString());
 		vo.setUser_id(map.get("user_id").toString());
 		vo.setPswd(map.get("pswd").toString());
 		vo.setUser_eml_addr(map.get("user_eml_addr").toString());
-		vo.setAuthrt_id("test");
-		vo.setSite_id("test");
+		vo.setSite_id(map.get("site_id").toString());
+		vo.setReg_id(map.get("site_id").toString());
+		vo.setMdfcn_id(map.get("mdfcn_id").toString());
 		
+		// 회원가입 결과 상태를 담을 맵 <String, String>
 		Map<String, String> res = new HashMap<String, String>();
+		
+		// (성공 : Success, 실패 : Fail)
 		String result = joinService.join(vo);
 		
+		// 맵에 적재
 		res.put("result", result);
-		// 다시 로그인 화면
+		
 		return res;
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/userIdCheck", method = RequestMethod.POST)
 	public Map<String, Object> userIdCheck(@RequestParam Map<String, String> params, HttpServletRequest req, HttpServletResponse res) throws Exception {
-		logger.info(params.toString());
-		
+		// DB에 동일한 아이디 수 카운트
 		int count = joinService.userIdCheck(params.get("user_id"));
+		
+		// 결과를 출력할 맵
 		Map<String, Object> result = new HashMap<String, Object>();
+		
+		// 결과 카운트를 맵에 적재
 		result.put("count", count);
 		
 		return result;

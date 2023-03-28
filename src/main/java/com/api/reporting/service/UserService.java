@@ -10,5 +10,4 @@ public interface UserService {
 	public List<UserVO> select_user() throws Exception;
 	
 	public UserVO login(LoginDTO dto) throws Exception;
-	
 }

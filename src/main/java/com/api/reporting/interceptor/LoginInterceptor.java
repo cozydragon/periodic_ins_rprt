@@ -25,7 +25,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		
 		HttpSession session = request.getSession();
 		
-		//·Î±×ÀÎ µÇ¾î ÀÖÀ»¶§
+		//ï¿½Î±ï¿½ï¿½ï¿½ ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 		if(session.getAttribute("LOGIN") != null){
 			session.removeAttribute("LOGIN");
@@ -34,11 +34,11 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 			
 		}
 		
-		if(request.getParameter("useCookie") != null){ // remember me ±¸Çö ÇÏ¸é »ç¿ë ÇÏ´Â °ÅÀÓ. ¾Æ´Ï¸é ¾È¾¸
+		if(request.getParameter("useCookie") != null){
 			logger.info("remember me................");
 			Cookie loginCookie = new Cookie("userId", request.getParameter("user_id").toString());
 			loginCookie.setPath("/");
-			loginCookie.setMaxAge(60*15*1*1);// ¼ø¼­´ë·Î 60ÃÊ 60ºÐ 24½Ã°£ 7ÀÏ
+			loginCookie.setMaxAge(60*15*1*1);
 			response.addCookie(loginCookie);
 		}
 
@@ -58,7 +58,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		Object role = modelMap.get("role");
 		Object site_id = modelMap.get("site_id");
 		
-		//·Î±×ÀÎ µÇ¾î ÀÖÀ» °æ¿ì
 		if(userVO != null){
 			
 			logger.info("login success");
