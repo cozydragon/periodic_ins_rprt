@@ -1,6 +1,6 @@
-package com.api.reporting.service;
+package com.api.reporting.cmn.service;
 
-import com.api.reporting.dto.MemberVO;
+import com.api.reporting.cmn.dto.MemberVO;
 
 public interface UserJoinService {
 

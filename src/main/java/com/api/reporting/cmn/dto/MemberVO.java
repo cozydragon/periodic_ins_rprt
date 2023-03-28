@@ -1,4 +1,4 @@
-package com.api.reporting.dto;
+package com.api.reporting.cmn.dto;
 
 import java.sql.Date;
 

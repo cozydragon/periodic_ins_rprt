@@ -1,4 +1,4 @@
-package com.api.reporting.service;
+package com.api.reporting.cmn.service;
 
 import java.util.Random;
 
@@ -13,9 +13,9 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import com.api.reporting.controller.LoginController;
-import com.api.reporting.dao.UserDAO;
-import com.api.reporting.dto.MemberVO;
+import com.api.reporting.cmn.controller.LoginController;
+import com.api.reporting.cmn.dao.UserDAO;
+import com.api.reporting.cmn.dto.MemberVO;
 
 @Service
 public class UserJoinServiceImpl implements UserJoinService {

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.api.reporting.cmn.dto.LoginDTO;
+import com.api.reporting.cmn.dto.MemberVO;
 import com.api.reporting.cmn.dto.MenuDTO;
 import com.api.reporting.cmn.dto.UserVO;
 
@@ -15,4 +16,7 @@ public interface UserDAO {
 	
 	public List<MenuDTO> selectMenu(LoginDTO dto) throws Exception;
 	
+	public int userIdCheck(String user_id);
+	
+	public int join(MemberVO vo);
 }
