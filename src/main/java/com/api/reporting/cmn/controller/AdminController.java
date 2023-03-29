@@ -33,7 +33,6 @@ import com.api.reporting.cmn.util.SangwhaUtil;
 /**
  * Handles requests for the application home page.
  */
-
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
