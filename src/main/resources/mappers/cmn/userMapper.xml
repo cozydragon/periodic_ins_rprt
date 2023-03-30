@@ -78,7 +78,7 @@
 		]]>
 	</select>
 	
-	<insert id="join" resultType="int">
+	<insert id="join">
 		INSERT INTO tb_cmn_user
    		(
 	   		  user_id
