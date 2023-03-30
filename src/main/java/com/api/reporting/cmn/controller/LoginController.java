@@ -131,7 +131,7 @@ public class LoginController {
 		vo.setPswd(map.get("pswd").toString());
 		vo.setUser_eml_addr(map.get("user_eml_addr").toString());
 		vo.setSite_id(map.get("site_id").toString());
-		vo.setReg_id(map.get("site_id").toString());
+		vo.setReg_id(map.get("reg_id").toString());
 		vo.setMdfcn_id(map.get("mdfcn_id").toString());
 		
 		// 회원가입 결과 상태를 담을 맵 <String, String>
