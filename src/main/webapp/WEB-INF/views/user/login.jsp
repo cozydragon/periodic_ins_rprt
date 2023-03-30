@@ -44,14 +44,14 @@ if (loginyn == null){
            <div class="form-group">
                <div class="col-xs-12">
                    <input class="form-control" type="text" name="user_id" required="" placeholder="ID를 입력해주세요" value="<%=userId%>" focus> 
-                   <i class="fa fa-user-o fa-2x form-control-feedback l-h-34"></i>
+                   <i class="fa fa-user fa-2x form-control-feedback l-h-34" style="padding-top: 5px;"></i>
                </div>
            </div>
 
            <div class="form-group">
                <div class="col-xs-12">
                    <input class="form-control" type="password" name="pswd" required="" placeholder="Password를 입력해주세요">
-                    <i class="fa fa-key fa-2x form-control-feedback l-h-34"></i>
+                    <i class="fa fa-key fa-2x form-control-feedback l-h-34" style="padding-top: 5px;"></i>
                </div>
            </div>
 
