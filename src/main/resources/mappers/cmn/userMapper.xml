@@ -38,8 +38,6 @@
 			,mdfcn_dt
 		from tb_cmn_user 
 		where user_id=#{user_id} and pswd = sha2(#{pswd},256)
-		select user_id,user_nm,pswd,user_eml_addr,reg_dt,mdfcn_dt,site_id 
-		from tb_cmn_user where user_id=#{user_id} and pswd = sha2(#{pswd},256)
 	</select>
 	
 	<select id="selectMenu" resultType="MenuDTO">
